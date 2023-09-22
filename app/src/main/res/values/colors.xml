@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#41C485</color>
+    <color name="blue">#0048FF</color>
+    <color name="pink">#D000FF</color>
+    <color name="ungu">#7700FF</color>
+    <color name="orane">#FF8400</color>
+    <color name="kuning">#FFE600</color>
+    <color name="coklat">#854C0F</color>
+    <color name="tosca">#00F7FF</color>
+    <color name="abu_abu">#C8C6C6</color>
+
+
+
+
 </resources>
+
+

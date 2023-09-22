@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-  
+
+    <item
+        android:id="@+id/Home"
+        android:title="Home"
+        android:icon="@drawable/home"/>
+    <item
+        android:id="@+id/Pesanan"
+        android:title="pesanan"
+        android:icon="@drawable/pesanan"/>
+    <item
+        android:id="@+id/Notif"
+        android:title="Notifikasi"
+        android:icon="@drawable/notif"/>
+    <item
+        android:id="@+id/Ulasan"
+        android:title="Ulasam"
+        android:icon="@drawable/ulasan"/>
+    <item
+        android:id="@+id/profil"
+        android:title="Profil"
+        android:icon="@drawable/profil"/>
+
+
+
+
 </menu>

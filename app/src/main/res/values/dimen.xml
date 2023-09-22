@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <dimen name="min3_button_size">100dp</dimen>
+    <dimen name="min3_button_margin">15dp</dimen>
+
 </resources>

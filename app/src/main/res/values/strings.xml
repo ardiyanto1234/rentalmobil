@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string-array name="countries_arry">
+        <item>Afganistan</item>
+        <item>albania</item>
+        <item>algeria</item>
+        <item>american samoa</item>
+        <item>andorra</item>
+        <item>Angola</item>
+        <item>Anguila</item>
+        <item>Antartica</item>
+        <item>Antigue and Barbuda</item>
+        <item>Argentina</item>
+        <item>Aremania</item>
+        <item>Aruba</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>dani black</item>
+        <item>BAnglades</item>
+        <item>indonesia</item>
+        <item>konoha</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
+
