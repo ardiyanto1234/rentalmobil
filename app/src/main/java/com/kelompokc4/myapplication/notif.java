@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link notif#newInstance} factory method to
+ * Use the {@link Profil#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class notif extends Fragment {
@@ -34,11 +34,11 @@ public class notif extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment notif.
+     * @return A new instance of fragment Profil.
      */
     // TODO: Rename and change types and number of parameters
-    public static notif newInstance(String param1, String param2) {
-        notif fragment = new notif();
+    public static Profil newInstance(String param1, String param2) {
+        Profil fragment = new Profil();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +59,6 @@ public class notif extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notif, container, false);
+        return inflater.inflate(R.layout.fragment_profil, container, false);
     }
 }

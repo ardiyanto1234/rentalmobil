@@ -31,12 +31,11 @@ public class Dasboard extends AppCompatActivity {
                     selectedFragment = new pesanan();
                 }else if (item.getItemId() == R.id.Notif){
                     selectedFragment = new notif();
-                }else if (item.getItemId() == R.id.Pesanan){
-                    selectedFragment = new pesanan();
-                }else if (item.getItemId() == R.id.Pesanan){
-                    selectedFragment = new pesanan();
+                }else if (item.getItemId() == R.id.Ulasan){
+                    selectedFragment = new Ulasan();
+                }else if (item.getItemId() == R.id.profil){
+                    selectedFragment = new Profil();
                 }
-
 
                 if(selectedFragment != null){
                     getSupportFragmentManager().beginTransaction()
