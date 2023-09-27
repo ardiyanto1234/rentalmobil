@@ -19,32 +19,28 @@ public class Dasboard extends AppCompatActivity {
 
         navbar = findViewById(R.id.bottomNavigasi);
 
-        navbar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = null;
+         navbar.setOnNavigationItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
 
-                //iki menu sen ndek bottom navigasi
-                if(item.getItemId() == R.id.Home){
-                    selectedFragment = new home();
-                }else if (item.getItemId() == R.id.Pesanan){
-                    selectedFragment = new pesanan();
-                }else if (item.getItemId() == R.id.Notif){
-                    selectedFragment = new notif();
-                }else if (item.getItemId() == R.id.Pesanan){
-                    selectedFragment = new pesanan();
-                }else if (item.getItemId() == R.id.Pesanan){
-                    selectedFragment = new pesanan();
-                }
-
-
-                if(selectedFragment != null){
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.frame, selectedFragment)
-                            .commit();
-                }
-                return true;
+             //iki menu sen ndek bottom navigasi
+            if(item.getItemId() == R.id.Home){
+                selectedFragment = new home();
+            }else if (item.getItemId() == R.id.Pesanan){
+                selectedFragment = new pesanan();
+            }else if (item.getItemId() == R.id.Notif){
+                selectedFragment = new notif();
+            }else if (item.getItemId() == R.id.Ulasan){
+                selectedFragment = new Ulasan();
+            }else if (item.getItemId() == R.id.profil){
+                selectedFragment = new Profil();
             }
+
+            if(selectedFragment != null){
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame, selectedFragment)
+                        .commit();
+            }
+            return true;
         });
 
         getSupportFragmentManager().beginTransaction()

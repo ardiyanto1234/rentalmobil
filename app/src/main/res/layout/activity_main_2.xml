@@ -35,11 +35,12 @@
         android:layout_width="300dp"
         android:layout_height="36dp"
         android:hint="Usnername"
-        android:textColor="@color/abu_abu"
+        android:textColor="@color/black"
         android:background="@drawable/backgroundtext"
         app:layout_constraintTop_toBottomOf="@id/txt_login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:paddingLeft="20dp"
         />
 
     <EditText
@@ -47,12 +48,22 @@
         android:layout_width="300dp"
         android:layout_height="36dp"
         android:hint="Password"
-        android:textColor="@color/abu_abu"
+        android:textColor="@color/black"
         android:background="@drawable/backgroundtext"
         app:layout_constraintTop_toBottomOf="@id/editTextUsername"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lupa Sandi?"
+        app:layout_constraintTop_toBottomOf="@id/editTextPassowrd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
     <Button
@@ -115,11 +126,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@id/garis_awal"
+            android:layout_marginStart="4dp"
             android:text="Or sigin with "
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/garis_awal"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintVertical_bias="1.0" />
 
         <View
             android:id="@+id/garis_akhir"
