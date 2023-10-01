@@ -22,8 +22,8 @@
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
-            android:name=".anyar"
-            android:exported="false" />
+            android:name=".Dasboard"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

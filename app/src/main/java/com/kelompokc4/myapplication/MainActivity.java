@@ -2,6 +2,7 @@ package com.kelompokc4.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,9 +30,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String username = editTextUsername.getText().toString();
                 String password = editTextPassword.getText().toString();
+                Log.i("button", "di click");
 
                 if (username.equals("user") && password.equals("password")) {
-
+                    Log.i("button", "di click 2");
                     Toast.makeText(MainActivity.this, "Login berhasil", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Dasboard.class);
                     startActivity(intent);
