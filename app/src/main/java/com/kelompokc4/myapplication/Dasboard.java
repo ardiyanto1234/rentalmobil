@@ -23,11 +23,8 @@ public class Dasboard extends AppCompatActivity {
          navbar.setOnNavigationItemSelectedListener(item -> {
             Fragment selectedFragment = null;
 
-<<<<<<< HEAD
              Log.i("output", ""+item.getItemId());
 
-=======
->>>>>>> c0585f38a5e3ad8acb90c5a6766be2b9d86aa094
             //iki menu sen ndek bottom navigasi
             if(item.getItemId() == R.id.Home){
                 selectedFragment = new home();

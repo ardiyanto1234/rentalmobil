@@ -57,10 +57,7 @@
                     />
 
                 <TextView
-<<<<<<< HEAD
-=======
                     android:layout_marginTop="0dp"
->>>>>>> c0585f38a5e3ad8acb90c5a6766be2b9d86aa094
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Semua"/>
