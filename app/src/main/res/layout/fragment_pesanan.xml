@@ -3,15 +3,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".pesanan">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="pesanan"
-        android:layout_marginTop="250dp"
-        android:textSize="50dp"
-        android:layout_marginLeft="80dp"/>
+        android:orientation="vertical">
 
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button_back"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="AVANZA 2017 (silver)"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mobilpesanan"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Spesifikasi"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/abu_abu"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="isi Silinder"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="1.329"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/abu_abu"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="Torsi Maksimal"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="12,3/ 4.200 rpm"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/abu_abu"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="Tranmisi"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="5 speed M/T"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"/>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    </LinearLayout>
 </FrameLayout>

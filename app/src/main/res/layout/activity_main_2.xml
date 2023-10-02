@@ -48,6 +48,7 @@
         android:layout_width="300dp"
         android:layout_height="36dp"
         android:hint="Password"
+        android:inputType="textPassword"
         android:textColor="@color/black"
         android:background="@drawable/backgroundtext"
         app:layout_constraintTop_toBottomOf="@id/editTextUsername"
@@ -64,6 +65,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextPassowrd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:paddingLeft="200dp"
         />
 
     <Button
@@ -76,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextPassowrd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         />
 
     <TextView
