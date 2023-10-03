@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,7 +23,9 @@ public class Dasboard extends AppCompatActivity {
          navbar.setOnNavigationItemSelectedListener(item -> {
             Fragment selectedFragment = null;
 
-             //iki menu sen ndek bottom navigasi
+             Log.i("output", ""+item.getItemId());
+
+            //iki menu sen ndek bottom navigasi
             if(item.getItemId() == R.id.Home){
                 selectedFragment = new home();
             }else if (item.getItemId() == R.id.Pesanan){
@@ -33,25 +36,6 @@ public class Dasboard extends AppCompatActivity {
                 selectedFragment = new Ulasan();
             }else if (item.getItemId() == R.id.profil){
                 selectedFragment = new Profil();
-                //iki menu sen ndek bottom navigasi
-                if(item.getItemId() == R.id.Home){
-                    selectedFragment = new home();
-                }else if (item.getItemId() == R.id.Pesanan){
-                    selectedFragment = new pesanan();
-                }else if (item.getItemId() == R.id.Notif){
-                    selectedFragment = new notif();
-                }else if (item.getItemId() == R.id.Ulasan){
-                    selectedFragment = new Ulasan();
-                }else if (item.getItemId() == R.id.profil){
-                    selectedFragment = new Profil();
-                }
-
-                if(selectedFragment != null){
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.frame, selectedFragment)
-                            .commit();
-                }
-                return true;
             }
 
             if(selectedFragment != null){
