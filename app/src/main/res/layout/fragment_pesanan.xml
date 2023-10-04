@@ -233,8 +233,23 @@
                 </androidx.cardview.widget.CardView>
 
             </androidx.cardview.widget.CardView>
-
-
         </LinearLayout>
     </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="150K"
+            android:layout_marginTop="550dp"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textSize="35dp"/>
+
+    </LinearLayout>
+
 </FrameLayout>
