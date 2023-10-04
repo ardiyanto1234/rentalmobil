@@ -132,7 +132,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="140dp"
@@ -159,7 +159,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="95dp"
                     android:layout_height="80dp"
-                    android:backgroundTint="@color/blue"
+                    android:backgroundTint="@color/green"
                     android:layout_marginLeft="50dp">
 
 
@@ -183,6 +183,57 @@
                 </androidx.cardview.widget.CardView>
 
             </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="140dp"
+                android:layout_height="80dp"
+                android:backgroundTint="@color/abu_abu"
+                android:layout_marginTop="430dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginLeft="15dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/jam"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="300K"
+                    android:layout_marginTop="42dp"
+                    android:layout_marginLeft="6dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="95dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="@color/green"
+                    android:layout_marginLeft="50dp">
+
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:text="24 jam"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:text="MEDIUM"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="30dp"/>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.cardview.widget.CardView>
+
 
         </LinearLayout>
     </HorizontalScrollView>

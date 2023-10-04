@@ -3,5 +3,7 @@
 
     <dimen name="min3_button_size">100dp</dimen>
     <dimen name="min3_button_margin">15dp</dimen>
+    <dimen name="activity_vertical_margin">100dp</dimen>
+    <dimen name="activity_horizontal_margin">100dp</dimen>
 
 </resources>
