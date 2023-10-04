@@ -28,8 +28,6 @@ public class Dasboard extends AppCompatActivity {
             //iki menu sen ndek bottom navigasi
             if(item.getItemId() == R.id.Home){
                 selectedFragment = new home();
-            }else if (item.getItemId() == R.id.Pesanan){
-                selectedFragment = new pesanan();
             }else if (item.getItemId() == R.id.Notif){
                 selectedFragment = new notif();
             }else if (item.getItemId() == R.id.Ulasan){

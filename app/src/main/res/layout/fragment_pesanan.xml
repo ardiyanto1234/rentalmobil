@@ -258,6 +258,13 @@
             android:textStyle="bold"
             android:textSize="20dp"/>
 
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="550dp"
+            android:backgroundTint="@color/green"
+            android:text="PESAN"
+            android:textColor="@color/black"/>
     </LinearLayout>
 
 </FrameLayout>
