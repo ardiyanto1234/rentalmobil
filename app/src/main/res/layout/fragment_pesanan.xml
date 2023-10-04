@@ -120,7 +120,8 @@
             android:text="Rencana"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"/>
     </LinearLayout>
 
     <HorizontalScrollView
@@ -140,6 +141,22 @@
                 android:layout_marginTop="430dp"
                 app:cardCornerRadius="20dp"
                 android:layout_marginLeft="15dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/jam"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="150K"
+                    android:layout_marginTop="42dp"
+                    android:layout_marginLeft="6dp"/>
+
+                
 
                 
 
