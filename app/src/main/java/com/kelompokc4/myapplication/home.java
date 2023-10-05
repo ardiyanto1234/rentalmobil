@@ -22,15 +22,12 @@ public class home extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lanjut();
+                Intent intent = new Intent(getActivity(), pesanan.class);
+                startActivity(intent);
             }
         });
 
         return view;
     }
 
-    public void lanjut() {
-        Intent intent = new Intent(getActivity(), PesananNew.class);
-        startActivity(intent);
-    }
 }
