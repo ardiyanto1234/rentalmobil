@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/btnKembaliHome"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_marginBottom="70dp"
         android:backgroundTint="@color/green"
@@ -265,7 +265,7 @@
             android:textStyle="bold"
             android:textSize="20dp"/>
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/pesan_button"
             android:layout_width="150dp"
             android:layout_height="70dp"

@@ -7,9 +7,9 @@
         android:icon="@drawable/home"/>
 
     <item
-        android:id="@+id/Notif"
-        android:title="Notifikasi"
-        android:icon="@drawable/notif"/>
+        android:id="@+id/History"
+        android:title="History"
+        android:icon="@drawable/histoty"/>
     <item
         android:id="@+id/Ulasan"
         android:title="Ulasam"

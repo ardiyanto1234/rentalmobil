@@ -21,6 +21,7 @@ import com.google.android.material.button.MaterialButton;
 
 public class pesanan extends AppCompatActivity {
     private Button btn;
+    private Button btnpesan;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,7 +37,20 @@ public class pesanan extends AppCompatActivity {
 
             }
         });
-    }
+                btnpesan = findViewById(R.id.pesan_button);
+                btnpesan.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(pesanan.this, pembayaran.class);
+                        startActivity(intent);
+                    }
+                });
+            }
+        }
 
 
-}
+
+
+
+
+
