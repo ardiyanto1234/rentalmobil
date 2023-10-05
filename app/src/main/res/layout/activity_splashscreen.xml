@@ -7,9 +7,16 @@
     tools:context=".Splashscreen">
 
     <ImageView
+        android:id="@+id/splashscreenApp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/splashscreen"/>
+        android:src="@drawable/splashscreen"
+        android:scaleType="centerCrop"
+        android:contentDescription="EasyDrive"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
     <TextView
