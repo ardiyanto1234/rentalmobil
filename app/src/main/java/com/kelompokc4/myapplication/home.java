@@ -30,7 +30,7 @@ public class home extends Fragment {
     }
 
     public void lanjut() {
-        Intent intent = new Intent(getActivity(), pesanan.class);
+        Intent intent = new Intent(getActivity(), PesananNew.class);
         startActivity(intent);
     }
 }
