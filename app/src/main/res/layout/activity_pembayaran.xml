@@ -141,8 +141,23 @@
         android:gravity="center_vertical">
 
         <Button
-            android:layout_width=""
-            android:layout_height="50dp"
+            android:id="@+id/buttonKtp"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="350dp"
+            android:backgroundTint="@color/red"
+            android:text="upload KTP"
+            android:layout_marginLeft="140dp"/>
+
+
+        <Button
+            android:id="@+id/btnKonfirmasiPembayaran"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/blue"
+            android:text="Konfirmasi"
+            android:layout_marginLeft="140dp"/>
+
 
 
 
