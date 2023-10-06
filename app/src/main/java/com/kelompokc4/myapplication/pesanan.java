@@ -20,9 +20,9 @@ import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
 
 public class pesanan extends AppCompatActivity {
-    private Button btn;
+    private ImageButton btn;
     private Button btnpesan;
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

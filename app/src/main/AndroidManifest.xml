@@ -16,7 +16,7 @@
             android:name=".pembayaran"
             android:exported="false" />
         <activity
-            android:name=".Splashscreen"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".LupaSandi"
@@ -31,7 +31,7 @@
             android:name=".Dasboard"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Splashscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

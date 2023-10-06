@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class home extends Fragment {
-
     private Button btn;
 
     @Override
@@ -26,8 +25,6 @@ public class home extends Fragment {
                 startActivity(intent);
             }
         });
-
         return view;
     }
-
 }
