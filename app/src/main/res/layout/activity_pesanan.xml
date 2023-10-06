@@ -166,7 +166,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="95dp"
                     android:layout_height="80dp"
-                    android:backgroundTint="@color/green"
+                    android:backgroundTint="@color/blue"
                     android:layout_marginLeft="50dp">
 
 
@@ -175,18 +175,11 @@
                         android:layout_height="20dp"
                         android:text="12 jam"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="25dp"/>
 
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="20dp"
-                        android:text="LOW"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="30dp"/>
+
                 </androidx.cardview.widget.CardView>
 
             </androidx.cardview.widget.CardView>
@@ -216,7 +209,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="95dp"
                     android:layout_height="80dp"
-                    android:backgroundTint="@color/green"
+                    android:backgroundTint="@color/blue"
                     android:layout_marginLeft="50dp">
 
 
@@ -225,18 +218,11 @@
                         android:layout_height="20dp"
                         android:text="24 jam"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="25dp"/>
 
-                    <TextView
-                        android:layout_width="70dp"
-                        android:layout_height="20dp"
-                        android:text="MEDIUM"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="30dp"/>
+
                 </androidx.cardview.widget.CardView>
 
             </androidx.cardview.widget.CardView>
@@ -270,9 +256,9 @@
             android:layout_width="150dp"
             android:layout_height="70dp"
             android:layout_marginTop="550dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/blue"
             android:text="PESAN"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 </FrameLayout>
