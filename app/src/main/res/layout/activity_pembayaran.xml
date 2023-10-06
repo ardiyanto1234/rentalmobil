@@ -33,11 +33,56 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
 
-        
+        <EditText
+            android:id="@+id/editTextname"
+            android:layout_width="300dp"
+            android:layout_height="36dp"
+            android:hint="Nama"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"
+            android:background="@drawable/backgroundtext"
+            android:layout_marginTop="200dp"
+            />
+
+        <EditText
+            android:id="@+id/editTextNomor"
+            android:layout_width="300dp"
+            android:layout_height="36dp"
+            android:hint="No.hp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"
+            android:background="@drawable/backgroundtext"
+            android:layout_marginTop="20dp"
+            />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="300dp"
+            android:layout_height="36dp"
+            android:hint="Masukan Email"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"
+            android:background="@drawable/backgroundtext"
+            android:layout_marginTop="20dp"
+            />
+
+        <EditText
+            android:id="@+id/editTextTanggal"
+            android:layout_width="300dp"
+            android:layout_height="36dp"
+            android:hint="Tanggal"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"
+            android:background="@drawable/backgroundtext"
+            android:layout_marginTop="20dp"
+            />
+
+
 
 
     </LinearLayout>
