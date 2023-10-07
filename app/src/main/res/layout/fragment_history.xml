@@ -8,13 +8,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       android:orientation="vertical">
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
 
         <Button
-            android:layout_width="match_parent"
+            android:id="@+id/btn_chatAdmind"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/green"/>
+            android:backgroundTint="@color/green"
+            android:layout_marginLeft="30dp"
+            android:text="Chat Admin"
+            android:textColor="@color/black"/>
 
+        <Button
+            android:id="@+id/btn_history"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:layout_marginLeft="20dp"
+            android:text="History"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 </FrameLayout>
