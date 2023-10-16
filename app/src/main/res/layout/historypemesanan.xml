@@ -4,7 +4,14 @@
     android:layout_height="80dp"
     android:backgroundTint="@color/abu_abu"
     android:layout_gravity="center_horizontal"
-
+    android:layout_marginTop="10dp"
     >
+    
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/historyroda4"
+        android:layout_marginTop="15dp"/>
+
 
 </com.google.android.material.card.MaterialCardView>

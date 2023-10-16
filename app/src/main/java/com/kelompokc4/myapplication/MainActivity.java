@@ -2,7 +2,10 @@ package com.kelompokc4.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,14 +54,35 @@ public class MainActivity extends AppCompatActivity {
                 lanjut();
             }
         });
+
+        editTextPassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                final int right = 2;
+
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    if (motionEvent.getRawX() >= editTextPassword.getRight() - editTextPassword.getCompoundDrawables()[right].getBounds().width()) {
+                        int pilih = editTextPassword.getSelectionEnd();
+                        if (passwordvisible) {
+                            editTextPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.visibleoff, 0);
+                            editTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordvisible = false;
+                        } else {
+                            editTextPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.visible, 0);
+                            editTextPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordvisible = true;
+                        }
+                        editTextPassword.setSelection(pilih);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
     }
 
     public void lanjut() {
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
     }
-
-
-    editTextPassword.setOnTouch
-
 }
