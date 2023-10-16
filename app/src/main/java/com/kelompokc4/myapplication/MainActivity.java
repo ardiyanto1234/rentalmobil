@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonLogin;
     private Button buttonRegister;
 
+    boolean passwordvisible ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,5 +57,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
     }
+
+
+    editTextPassword.setOnTouch
 
 }
