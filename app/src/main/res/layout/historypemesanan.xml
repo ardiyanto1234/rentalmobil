@@ -11,7 +11,17 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/historyroda4"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEWA AVANZA 2017 (Silver)"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="70dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
 
 
 </com.google.android.material.card.MaterialCardView>
