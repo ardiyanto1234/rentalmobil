@@ -38,7 +38,6 @@
         android:text="Anda pernah melakukan kegiatan pemesanan pada tanggal 29-9-23"
         android:layout_marginTop="25dp"/>
 
-
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
