@@ -40,30 +40,11 @@
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Nomor Rekening"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="20dp"
-        android:textSize="20dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="002101257332505 (Iqbal Fauzi)"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="200dp"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/green"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="40dp">
+        android:gravity="center_horizontal">
 
 
         <TextView
