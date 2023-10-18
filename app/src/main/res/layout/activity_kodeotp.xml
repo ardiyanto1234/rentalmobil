@@ -3,7 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".kodeotp">
+    android:layout_height="wrap_content"
+    tools:context=".kodeotp"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin">
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:background="@drawable/logo"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Very otp"
+        android:layout_marginTop="500dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
