@@ -7,20 +7,35 @@
     tools:context=".kodeotp">
 
     <ImageView
+        android:id="@+id/gambarOtp"
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:background="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="19dp" />
+
+    <TextView
+        android:id="@+id/verivyOtp"
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+       android:text="Verify OTP"
         android:layout_marginTop="25dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/gambarOtp"/>
 
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:text="Very Otp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Please enter the code we sent you to email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/verivyOtp"
+        android:textColor="@color/abu_abu"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
