@@ -5,12 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity2 extends AppCompatActivity {
 
     private Button btn;
+    private Button btnlanjut;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -18,6 +18,7 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        btnlanjut = findViewById(R.id.buttonLanjut);
         btn = findViewById(R.id.buttonKembali);
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -26,10 +27,18 @@ public class MainActivity2 extends AppCompatActivity {
                 lanjut();
             }
         });
+
+        btnlanjut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity2.this, kodeotp.class);
+                startActivity(intent);
+            }
+        });
     }
+
     public void lanjut() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
 }
