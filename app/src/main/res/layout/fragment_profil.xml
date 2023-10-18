@@ -13,10 +13,7 @@
         android:id="@+id/btn_choose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose Photo"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="update foto"/>
 
     <ImageView
         android:id="@+id/img_thumb"
