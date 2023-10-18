@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".kodeotp"
-    android:layout_marginHorizontal="@dimen/activity_horizontal_margin">
+    tools:context=".kodeotp">
 
     <ImageView
         android:layout_width="180dp"
@@ -14,10 +13,10 @@
         android:layout_marginTop="25dp"
         android:layout_marginLeft="10dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Very otp"
-        android:layout_marginTop="500dp"/>
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:text="Very Otp"
+       android:layout_marginTop=/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
