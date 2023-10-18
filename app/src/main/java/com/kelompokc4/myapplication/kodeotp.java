@@ -1,7 +1,6 @@
 package com.kelompokc4.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 public class kodeotp extends AppCompatActivity {
