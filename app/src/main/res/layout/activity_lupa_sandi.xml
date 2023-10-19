@@ -79,10 +79,13 @@
         />
 
     <TextView
-        android:id=""
+        android:id="@+id/txtSandiBaru"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Masukan Sandi Baru"/>
+        android:text="Masukan Sandi Baru"
+        app:layout_constraintTop_toBottomOf="@id/editTextNoHp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="60dp"/>
 
 
     <EditText
@@ -93,8 +96,7 @@
         android:paddingLeft="20dp"
         android:textColor="@color/black"
         android:background="@drawable/backgroundtext"
-        android:layout_marginTop="170dp"
-        app:layout_constraintTop_toBottomOf="@id/txt_lupaSandi"
+        app:layout_constraintTop_toBottomOf="@id/txtSandiBaru"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
