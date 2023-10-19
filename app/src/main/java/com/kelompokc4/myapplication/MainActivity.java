@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         btnLupasandi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "dani", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Lupa Sandi", Toast.LENGTH_SHORT).show();
+                lupasandi();
             }
         });
 
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void lupa(){
+    public void lupasandi(){
         Intent intent = new Intent(MainActivity.this, LupaSandi.class);
         startActivity(intent);
 
