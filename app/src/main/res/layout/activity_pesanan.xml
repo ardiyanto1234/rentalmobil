@@ -25,14 +25,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="AVANZA 2017 (silver)"
+            android:text="Kijang Innova 2.4 G"
             android:textStyle="bold"
             android:textSize="30dp"/>
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mobilpesanan"/>
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/innova"/>
 
         <TextView
             android:layout_width="match_parent"
