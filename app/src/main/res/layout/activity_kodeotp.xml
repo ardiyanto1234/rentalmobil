@@ -67,10 +67,11 @@
         />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="match_parent"
-        android:text=""
-        android:layout_marginTop="50dp"
+        android:text="SELESAI"
+        android:backgroundTint="@color/green"
+        android:layout_marginTop="100dp"
         app:layout_constraintTop_toTopOf="@id/votp_inp_otp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

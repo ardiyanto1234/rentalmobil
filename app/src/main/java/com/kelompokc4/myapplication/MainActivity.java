@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextPassword;
     private Button buttonLogin;
     private Button buttonRegister;
+    private TextView btnLupasandi;
 
     boolean passwordvisible ;
 
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassowrd);
         buttonLogin = findViewById(R.id.buttonLogin);
         buttonRegister = findViewById(R.id.buttonRegister);
+        btnLupasandi = findViewById(R.id.buttonLupaSandi);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 lanjut();
+            }
+        });
+
+        btnLupasandi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "dani", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -81,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void lupa(){
+        Intent intent = new Intent(MainActivity.this, LupaSandi.class);
+        startActivity(intent);
+
+    }
     public void lanjut() {
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
