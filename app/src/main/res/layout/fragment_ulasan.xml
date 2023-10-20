@@ -5,13 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".Ulasan">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Ulasan"
-        android:layout_marginTop="250dp"
-        android:textSize="50dp"
-        android:layout_marginLeft="80dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kirim Ulasan"
+        android:textSize="20dp"
+        android:textStyle="italic|bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="150dp"/>
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/bg_editext" />
 
 </FrameLayout>
