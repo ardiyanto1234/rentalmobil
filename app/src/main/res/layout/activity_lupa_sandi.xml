@@ -45,10 +45,14 @@
         />
 
     <TextView
+        android:id="@+id/txtDeskripsi"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginTop="350dp"
-        android:text="Masukan email Anda dan tunggu kode etik akan dikirimkan."/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Masukan email Anda dan tunggu kode etik akan dikirimkan."
+        app:layout_constraintTop_toTopOf="@+id/txt_Silakanisi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
     <TextView
@@ -56,8 +60,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Masukan Email"
-        android:layout_marginTop="100dp"
-        app:layout_constraintTop_toBottomOf="@id/txt_Silakanisi"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/txtDeskripsi"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="60dp"
         />
