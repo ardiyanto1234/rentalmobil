@@ -13,6 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kelompokc4.myapplication.koneksi.RetrofitClient;
+import com.kelompokc4.myapplication.koneksi.UserResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText editTextUsername;
@@ -40,14 +47,22 @@ public class MainActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString();
                 Log.i("button", "di click");
 
-                if (username.equals("user") && password.equals("password")) {
-                    Log.i("button", "di click 2");
-                    Toast.makeText(MainActivity.this, "Login berhasil", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, Dasboard.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(MainActivity.this, "Login gagal. Coba lagi.", Toast.LENGTH_SHORT).show();
-                }
+                RetrofitClient.getInstance().loginEasyDrive(username,password).enqueue(new Callback<UserResponse>() {
+                    @Override
+                    public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                        if(response.body() != null && response.body().getStatus().equalsIgnoreCase("success")){
+                            startActivity(new Intent(MainActivity.this, Dasboard.class));
+                        }else{
+                            Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<UserResponse> call, Throwable t) {
+
+                    }
+                });
             }
         });
 

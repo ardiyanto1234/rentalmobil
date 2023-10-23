@@ -40,7 +40,8 @@
         android:layout_marginTop="56dp"
         android:text="Masukan Username"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/txt_isilogin" />
+        app:layout_constraintTop_toTopOf="@id/txt_isilogin"
+        />
 
     <EditText
         android:id="@+id/editTextUsername"
@@ -64,7 +65,8 @@
         android:layout_marginTop="120dp"
         android:text="Masukan Email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/txt_isilogin" />
+        app:layout_constraintTop_toTopOf="@id/txt_isilogin"
+        />
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -88,7 +90,8 @@
         android:layout_marginTop="185dp"
         android:text="Masukan Password"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/txt_isilogin" />
+        app:layout_constraintTop_toTopOf="@id/txt_isilogin"
+        />
 
     <EditText
         android:id="@+id/editTextPassowrd"
