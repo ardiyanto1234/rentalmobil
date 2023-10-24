@@ -13,7 +13,7 @@
     <item
         android:id="@+id/Ulasan"
         android:title="Ulasam"
-        android:icon="@drawable/ulasan"/>
+        android:icon="@drawable/message"/>
     <item
         android:id="@+id/profil"
         android:title="Profil"
