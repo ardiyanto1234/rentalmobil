@@ -41,7 +41,7 @@
 
     <androidx.cardview.widget.CardView
             android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:backgroundTint="@color/kuning2"
             app:cardCornerRadius="20dp"
             android:layout_marginLeft="20dp"
@@ -50,7 +50,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Honda Jazz"
+            android:text="Innova 2.4 G"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"/>
@@ -58,16 +58,26 @@
         
         
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/mobilkursi4"/>
-            
+            android:layout_width="130dp"
+            android:layout_height="90dp"
+            android:background="@drawable/innovabg"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"/>
+
+        <Button
+            android:id="@+id/btnpesan"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="7 seater"
+            android:textSize="10dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/kuning2"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="20dp"
+            />
 
 
-
-            
-            
-        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
         
 
 
