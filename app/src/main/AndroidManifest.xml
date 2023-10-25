@@ -8,13 +8,16 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:networkSecurityConfig="@xml/network_security"
         android:icon="@drawable/logo"
         android:label="@string/Easy_Drive"
+        android:networkSecurityConfig="@xml/network_security"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".daftarmobil"
+            android:exported="false" />
         <activity
             android:name=".otplupasandi"
             android:exported="false" />
