@@ -22,4 +22,13 @@
         android:background="@drawable/bg_editext"
         android:gravity="top|left"/>
 
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:text="Kirim"
+        android:textColor="@color/black"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="55dp"/>
+
 </FrameLayout>

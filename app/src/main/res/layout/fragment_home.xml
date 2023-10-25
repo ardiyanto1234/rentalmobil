@@ -48,7 +48,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="350dp"
                 android:layout_height="100dp"
-                android:backgroundTint="@color/abu_abu"
+                android:backgroundTint="@color/kuning2"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
@@ -63,40 +63,28 @@
                     android:layout_marginTop="5dp"
                     />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Mobil Kursi 8"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginLeft="30dp"
-                    />
+
 
                 <TextView
                     android:id="@+id/buttonBooking1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:text="Kilik Pemesanan"
+                    android:text="Mobil 6 Kursi"
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="40dp"
                     />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Kijang Innova 2.5 M/T"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="30dp"
-                    />
+
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="350dp"
                 android:layout_height="100dp"
-                android:backgroundTint="@color/abu_abu"
+                android:backgroundTint="@color/kuning2"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
@@ -106,17 +94,9 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/avanza2"
-                    android:layout_marginLeft="180dp"
-                    android:layout_marginTop="5dp"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Mobil Kursi 8"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/mobilkursi4"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginTop="15dp"
                     />
 
                 <TextView
@@ -124,20 +104,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:text="Kilik Pemesanan"
+                    android:text="Mobil Kursi 4"
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"
                     android:layout_marginTop="60dp"
                     />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Avanza 1.8 M/T"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="30dp"
-                    />
+
 
             </androidx.cardview.widget.CardView>
         </LinearLayout>
