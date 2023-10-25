@@ -43,7 +43,8 @@
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="350dp"
@@ -52,8 +53,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
-                app:cardCornerRadius="10dp"
-                >
+                app:cardCornerRadius="10dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -64,14 +64,16 @@
                     />
 
                 <Button
-                    android:id="@+id/buttonBooking1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="7 seaters"
+                    android:id="@+id/btn7seater"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="7 seater"
+                    android:textSize="10dp"
+                    android:backgroundTint="@color/black"
+                    android:textColor="@color/kuning2"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="20dp"
                     />
-
-
-
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -81,10 +83,8 @@
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="20dp"
                     />
-
-
 
             </androidx.cardview.widget.CardView>
 
@@ -101,13 +101,12 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/mobilkursi4"
+                    android:background="@drawable/mobil4kursi"
                     android:layout_marginLeft="190dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="10dp"
                     />
 
                 <TextView
-                    android:id="@+id/buttonBooking2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -115,8 +114,21 @@
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="20dp"
                     />
+
+                <Button
+                    android:id="@+id/btn4kursi"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="4 seater"
+                    android:textSize="10dp"
+                    android:backgroundTint="@color/black"
+                    android:textColor="@color/kuning2"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
 
 
 
