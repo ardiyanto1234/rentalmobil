@@ -12,7 +12,7 @@
         android:layout_height="60dp"
         android:background="@drawable/button_back"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/txtPemesanan"
@@ -42,7 +42,9 @@
         android:id="@+id/UnitYangTersedia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        top
+        android:layout_marginTop="200dp"
+        android:textSize="20dp"
+        android:textStyle="italic|bold"
         android:text="Berikut Unit 7 Kursi Yang Tersedia"
         app:layout_constraintTop_toTopOf="@id/gambarbg"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +55,7 @@
             android:layout_height="200dp"
             android:backgroundTint="@color/kuning2"
             app:cardCornerRadius="20dp"
+        android:layout_marginTop="50dp"
             android:layout_marginLeft="20dp"
             app:layout_constraintTop_toTopOf="@+id/UnitYangTersedia"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,12 +82,12 @@
             android:id="@+id/btnpesan"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:text="7 seater"
+            android:text="PESAN"
             android:textSize="10dp"
             android:backgroundTint="@color/black"
             android:textColor="@color/kuning2"
             android:layout_marginTop="140dp"
-            android:layout_marginLeft="20dp"
-            />
+            android:layout_marginLeft="20dp"/>
 
     </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
