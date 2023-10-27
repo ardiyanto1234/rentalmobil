@@ -18,6 +18,7 @@ import retrofit2.Response;
 
 public class LupaSandi extends AppCompatActivity {
     private Button btn;
+    private Button btnkembali;
 
     private EditText inpEmail;
 
@@ -28,6 +29,8 @@ public class LupaSandi extends AppCompatActivity {
 
         btn = findViewById(R.id.buttonLanjut2);
         inpEmail = findViewById(R.id.editTextNoHp);
+        btnkembali = findViewById(R.id.buttonKembali2);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,23 +45,34 @@ public class LupaSandi extends AppCompatActivity {
                                                     .putExtra(otplupasandi.OTP, response.body().getData().getOtp())
                                                     .putExtra(otplupasandi.EMAIL, response.body().getData().getEmail())
                                     );
-                                }else {
+                                } else {
                                     Toast.makeText(LupaSandi.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
-
                             }
 
                             @Override
                             public void onFailure(Call<VerifyResponse> call, Throwable t) {
-                                Toast.makeText(LupaSandi.this, t.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LupaSandi.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
+            }
+        });
+
+        btnkembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                kembali();
             }
         });
     }
 
     public void Lanjut() {
         Intent intent = new Intent(LupaSandi.this, otplupasandi.class);
+        startActivity(intent);
+    }
+
+    private void kembali() {
+        Intent intent = new Intent(LupaSandi.this, MainActivity.class);
         startActivity(intent);
     }
 }
