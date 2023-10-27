@@ -3,7 +3,7 @@ package com.kelompokc4.myapplication.koneksi;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class UserResponse {
+public class  UserResponse {
 
     @Expose
     @SerializedName("status")
