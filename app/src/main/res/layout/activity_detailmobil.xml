@@ -28,6 +28,7 @@
         app:layout_constraintTop_toTopOf="@+id/arrowback"/>
 
     <ImageView
+        android:id="@+id/gambarmobil"
         android:layout_width="320dp"
         android:layout_height="200dp"
         android:background="@drawable/innovabg"
@@ -39,7 +40,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text="Innova Reborn 2018"
+        android:layout_marginTop="200dp"
+        android:textSize="30dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gambarmobil"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
