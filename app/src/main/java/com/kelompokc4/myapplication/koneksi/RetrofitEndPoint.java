@@ -1,5 +1,7 @@
 package com.kelompokc4.myapplication.koneksi;
 
+import com.kelompokc4.myapplication.response.VerifyResponse;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -86,5 +88,12 @@ public interface RetrofitEndPoint {
             @Field("photo") String photo);*/
 
 
+    @FormUrlEncoded
+    @POST("mail.php")
+    Call<VerifyResponse> sendEmail(
+            @Field("email") String email,
+            @Field("type") String type,
+            @Field("action") String action
+    );
 
 }

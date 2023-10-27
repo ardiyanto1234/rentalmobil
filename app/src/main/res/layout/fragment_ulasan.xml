@@ -25,9 +25,9 @@
     <Button
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/black"
         android:text="Kirim"
-        android:textColor="@color/black"
+        android:textColor="@color/kuning2"
         android:layout_marginTop="300dp"
         android:layout_marginLeft="55dp"/>
 

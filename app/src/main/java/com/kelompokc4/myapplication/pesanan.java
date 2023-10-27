@@ -41,7 +41,7 @@ public class pesanan extends AppCompatActivity {
                 btnpesan.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(pesanan.this, pembayaran.class);
+                        Intent intent = new Intent(pesanan.this, pembayarancash.class);
                         startActivity(intent);
                     }
                 });

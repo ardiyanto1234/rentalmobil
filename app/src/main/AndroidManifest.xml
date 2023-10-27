@@ -11,7 +11,7 @@
         android:icon="@drawable/logo"
         android:label="@string/Easy_Drive"
         android:networkSecurityConfig="@xml/network_security"
-        android:roundIcon="@drawable/logo"
+        android:roundIcon="@drawable/logo2"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
@@ -25,7 +25,7 @@
             android:name=".konfirmaspembayran"
             android:exported="false" />
         <activity
-            android:name=".konfirmasipembayaran"
+            android:name=".konfirmasipembayran"
             android:exported="false"
             android:label="@string/title_activity_konfirmasipembayaran"
             android:theme="@style/Theme.MyApplication" />
