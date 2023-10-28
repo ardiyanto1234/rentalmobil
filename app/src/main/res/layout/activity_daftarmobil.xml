@@ -10,7 +10,7 @@
         android:id="@+id/btnbck"
         android:layout_width="50dp"
         android:layout_height="60dp"
-        android:background="@drawable/button_back"
+        android:background="@drawable/arrowback"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
