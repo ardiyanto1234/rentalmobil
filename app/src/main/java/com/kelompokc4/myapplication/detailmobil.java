@@ -17,17 +17,17 @@ public class detailmobil extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      //  setContentView(R.layout.activity_detailmobil);
-//
-//        gambarbtn = findViewById(R.id.arrowback);
-//
-//        gambarbtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(detailmobil.this, daftarmobil.class));
-//                Toast.makeText(detailmobil.this, "Kembali", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
+        setContentView(R.layout.activity_detailmobil);
+
+        gambarbtn = findViewById(R.id.arrowback);
+
+        gambarbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                Toast.makeText(detailmobil.this, "Kembali", Toast.LENGTH_SHORT).show();
+
+            }
+        });
  }
 }

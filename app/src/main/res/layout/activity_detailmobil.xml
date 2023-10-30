@@ -7,7 +7,7 @@
     android:background="@color/kuning2"
     tools:context=".detailmobil">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/arrowback"
         android:layout_width="50dp"
         android:layout_height="60dp"
