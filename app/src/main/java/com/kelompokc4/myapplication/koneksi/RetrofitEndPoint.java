@@ -46,7 +46,7 @@ public interface RetrofitEndPoint {
 
 
     @FormUrlEncoded
-    @POST("google_login.php")
+    @POST("Login_goggle.php")
     Call<UserResponse> google_login(
             @Field("email") String email
     );
