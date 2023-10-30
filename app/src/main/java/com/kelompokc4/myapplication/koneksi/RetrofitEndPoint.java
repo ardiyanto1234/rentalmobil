@@ -11,7 +11,7 @@ import retrofit2.http.Query;
 
 public interface RetrofitEndPoint {
     @FormUrlEncoded
-    @POST("Registrasi.php")
+    @POST("Register.php")
     Call<UserResponse> driveeasy(
             @Field("username") String username,
             @Field("email") String email,
@@ -56,23 +56,14 @@ public interface RetrofitEndPoint {
             @Field("email") String email
     );*/
 
- /*   @FormUrlEncoded
-    @POST("users/register.php")
-    Call<UsersResponse> register(
-            @Field("username") String username,
-            @Field("email") String email,
-            @Field("full_name") String fullName,
-            @Field("password") String password
-    );*/
-
-  /*  @FormUrlEncoded
-    @POST("users/register_google.php")
-    Call<UsersResponse> registerGoogle(
-            @Field("username") String username,
-            @Field("email") String email,
-            @Field("full_name") String fullName,
-            @Field("password") String password
-    );*/
+//    @FormUrlEncoded
+//    @POST("users/register_google.php")
+//    Call<UsersResponse> registerGoogle(
+//            @Field("username") String username,
+//            @Field("email") String email,
+//            @Field("full_name") String fullName,
+//            @Field("password") String password
+//    );*/
 
    /* @FormUrlEncoded
     @POST("users/update_pw.php")

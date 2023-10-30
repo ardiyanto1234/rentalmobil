@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void lanjut() {
-        Intent intent = new Intent(this, MainActivity2.class);
+        Intent intent = new Intent(this, registrasi.class);
         startActivity(intent);
     }
 }

@@ -51,7 +51,7 @@
             android:name=".pesanan"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".registrasi"
             android:exported="false" />
         <activity
             android:name=".Dasboard"
