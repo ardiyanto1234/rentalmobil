@@ -15,8 +15,8 @@
         android:title="Ulasam"
         android:icon="@drawable/message"/>
     <item
-        android:id="@+id/profil"
-        android:title="Profil"
+        android:id="@+id/Profil"
+        android:title="profil"
         android:icon="@drawable/profil"/>
 
 </menu>

@@ -38,7 +38,6 @@ public class LupaSandi extends AppCompatActivity {
                         .enqueue(new Callback<VerifyResponse>() {
                             @Override
                             public void onResponse(Call<VerifyResponse> call, Response<VerifyResponse> response) {
-
                                 if (response.body() != null && response.body().getStatus().equalsIgnoreCase("success")){
                                     startActivity(
                                             new Intent(LupaSandi.this, otplupasandi.class)
@@ -49,7 +48,6 @@ public class LupaSandi extends AppCompatActivity {
                                     Toast.makeText(LupaSandi.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
-
                             @Override
                             public void onFailure(Call<VerifyResponse> call, Throwable t) {
                                 Toast.makeText(LupaSandi.this, t.getMessage(), Toast.LENGTH_SHORT).show();
@@ -57,7 +55,6 @@ public class LupaSandi extends AppCompatActivity {
                         });
             }
         });
-
         btnkembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +62,6 @@ public class LupaSandi extends AppCompatActivity {
             }
         });
     }
-
     public void Lanjut() {
         Intent intent = new Intent(LupaSandi.this, otplupasandi.class);
         startActivity(intent);
