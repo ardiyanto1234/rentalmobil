@@ -26,6 +26,13 @@ public interface RetrofitEndPoint {
     );
 
     @FormUrlEncoded
+    @POST("updatesandi.php")
+    Call<UserResponse> gantiSandi(
+            @Field("email") String email,
+            @Field("password") String password
+    );
+
+    @FormUrlEncoded
     @POST("controllers/mobile/users/login.php")
     Call<UserResponse> loginHaqi(
             @Field("email") String username,

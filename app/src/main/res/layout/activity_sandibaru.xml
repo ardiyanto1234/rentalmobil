@@ -55,8 +55,16 @@
         app:layout_constraintTop_toBottomOf="@id/usernameBaru" />
 
     <Button
+        android:id="@+id/konfrimSandiBaru"
+        android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_40sdp"
-        android:text=""/>
+        android:text="Simpan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextUsername"
+        android:layout_marginTop="@dimen/_100sdp"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/kuning2"/>
 
 
 

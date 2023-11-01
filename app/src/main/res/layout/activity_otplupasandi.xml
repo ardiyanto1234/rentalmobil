@@ -70,7 +70,7 @@
         android:id="@+id/btnSelesai"
         android:layout_width="200dp"
         android:layout_height="match_parent"
-        android:text="SELESAI"
+        android:text="Lanjut"
         android:textStyle="bold"
         android:textColor="@color/kuning2"
         android:backgroundTint="@color/black"
