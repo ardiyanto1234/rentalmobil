@@ -16,7 +16,20 @@
         android:backgroundTint="@color/black"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    
+    <TextView
+        android:id="@+id/keteranganMobil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Innova Reborn"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnKembaliHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"/>
 
     <ImageView
         android:id="@+id/gambarPesanan"
@@ -26,7 +39,8 @@
         android:background="@drawable/innovabg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnKembaliHome" />
+        app:layout_constraintTop_toTopOf="@+id/btnKembaliHome"
+        />
 
     <TextView
         android:id="@+id/inputIdentitas"
@@ -38,57 +52,75 @@
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
+        app:layout_constraintTop_toTopOf="@+id/gambarPesanan"
+        />
 
     <TextView
         android:id="@+id/namaLengkap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_200sdp"
         android:text="nama"
-        android:textSize="@dimen/_15sdp"
+        android:textSize="@dimen/_13sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
+        app:layout_constraintTop_toTopOf="@+id/gambarPesanan"
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextNama"
-        android:layout_width="@dimen/_100sdp"
+        android:layout_width="@dimen/_130sdp"
         android:layout_height="@dimen/_50sdp"
-        android:layout_marginLeft="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         app:boxBackgroundColor="@color/white"
         app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
         app:boxCornerRadiusBottomStart="@dimen/_10sdp"
         app:boxCornerRadiusTopEnd="@dimen/_10sdp"
         app:boxCornerRadiusTopStart="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/namaLengkap">
+        app:layout_constraintTop_toTopOf="@+id/namaLengkap"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
+    <TextView
+        android:id="@+id/Alamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_165sdp"
+        android:layout_marginTop="@dimen/_200sdp"
+        android:text="Alamat"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gambarPesanan"
+        />
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextNama"
-        android:layout_width="@dimen/_100sdp"
+        android:id="@+id/editTextAlamat"
+        android:layout_width="@dimen/_140sdp"
         android:layout_height="@dimen/_50sdp"
-        android:layout_marginLeft="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_160sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         app:boxBackgroundColor="@color/white"
         app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
         app:boxCornerRadiusBottomStart="@dimen/_10sdp"
         app:boxCornerRadiusTopEnd="@dimen/_10sdp"
         app:boxCornerRadiusTopStart="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/namaLengkap">
+        app:layout_constraintTop_toTopOf="@+id/namaLengkap"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
