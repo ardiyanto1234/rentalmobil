@@ -20,33 +20,30 @@ import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
 
 public class pesanan extends AppCompatActivity {
-    private ImageButton btn;
-    private Button btnpesan;
+
+    ImageButton btnback;
+
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesanan);
 
-        btn = findViewById(R.id.btnKembaliHome);
-        btn.setOnClickListener(new View.OnClickListener() {
+        btnback = findViewById(R.id.btnKembaliDetail);
+
+        btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(pesanan.this, Dasboard.class));
-                Toast.makeText(pesanan.this, "Kembali", Toast.LENGTH_SHORT).show();
-
+                onBackPressed();
             }
         });
-                btnpesan = findViewById(R.id.pesan_button);
-                btnpesan.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(pesanan.this, pembayarancash.class);
-                        startActivity(intent);
-                    }
-                });
-            }
-        }
+    }
+        public void kembali () {
+            Intent intent = new Intent(pesanan.this, detailmobil.class);
+            startActivity(intent);
+
+    }
+}
 
 
 

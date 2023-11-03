@@ -8,11 +8,11 @@
     tools:context=".pesanan">
 
     <ImageButton
-        android:id="@+id/btnKembaliHome"
+        android:id="@+id/btnKembaliDetail"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginBottom="70dp"
-        android:background="@drawable/button_back"
+        android:background="@drawable/arrowback"
         android:backgroundTint="@color/black"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
         android:text="Innova Reborn"
         android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnKembaliHome"
+        app:layout_constraintTop_toTopOf="@+id/btnKembaliDetail"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"/>
@@ -39,7 +39,7 @@
         android:background="@drawable/innovabg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnKembaliHome"
+        app:layout_constraintTop_toTopOf="@+id/btnKembaliDetail"
         />
 
     <TextView
@@ -86,9 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
-
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <TextView
         android:id="@+id/Alamat"
@@ -150,12 +148,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Notlp"
         >
-
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -184,15 +180,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tagllahir"
         >
-
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
-    
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -216,7 +209,6 @@
         app:cardCornerRadius="@dimen/_10sdp"
         android:backgroundTint="@color/black"
         >
-
         <TextView
             android:id="@+id/jamberangkat"
             android:layout_width="wrap_content"
@@ -226,7 +218,6 @@
             android:textColor="@color/kuning2"
             android:layout_gravity="center"
             />
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -240,7 +231,6 @@
         app:cardCornerRadius="@dimen/_10sdp"
         android:backgroundTint="@color/black"
         >
-
         <TextView
             android:id="@+id/jamberangkat2"
             android:layout_width="wrap_content"
@@ -250,7 +240,6 @@
             android:textColor="@color/kuning2"
             android:layout_gravity="center"
             />
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -264,7 +253,6 @@
         app:cardCornerRadius="@dimen/_10sdp"
         android:backgroundTint="@color/black"
         >
-
         <TextView
             android:id="@+id/jamberangkat3"
             android:layout_width="wrap_content"
@@ -274,7 +262,6 @@
             android:textColor="@color/kuning2"
             android:layout_gravity="center"
             />
-
     </androidx.cardview.widget.CardView>
 
     <Button
