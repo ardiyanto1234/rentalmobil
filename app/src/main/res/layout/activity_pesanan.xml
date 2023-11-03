@@ -69,7 +69,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextNama"
-        android:layout_width="@dimen/_130sdp"
+        android:layout_width="@dimen/_134sdp"
         android:layout_height="@dimen/_50sdp"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_15sdp"
@@ -123,4 +123,172 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/Notlp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_270sdp"
+        android:text="No telphone"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gambarPesanan"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextNotlphone"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+        app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+        app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+        app:boxCornerRadiusTopStart="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Notlp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tagllahir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_165sdp"
+        android:layout_marginTop="@dimen/_270sdp"
+        android:text="Tanggal Lahir"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gambarPesanan"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextTglLahir"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginLeft="@dimen/_160sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+        app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+        app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+        app:boxCornerRadiusTopStart="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tagllahir"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atur Jadwal"
+        app:layout_constraintTop_toTopOf="@id/editTextTglLahir"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:textStyle="bold"
+        />
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewJadwal"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextTglLahir"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:backgroundTint="@color/black"
+        >
+
+        <TextView
+            android:id="@+id/jamberangkat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 Jam"
+            android:textStyle="bold"
+            android:textColor="@color/kuning2"
+            android:layout_gravity="center"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewJadwal2"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextTglLahir"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:layout_marginLeft="@dimen/_110sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:backgroundTint="@color/black"
+        >
+
+        <TextView
+            android:id="@+id/jamberangkat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24 jam"
+            android:textStyle="bold"
+            android:textColor="@color/kuning2"
+            android:layout_gravity="center"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewJadwal3"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextTglLahir"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:layout_marginLeft="@dimen/_210sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:backgroundTint="@color/black"
+        >
+
+        <TextView
+            android:id="@+id/jamberangkat3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 Hari"
+            android:textStyle="bold"
+            android:textColor="@color/kuning2"
+            android:layout_gravity="center"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/Pesan"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Pesan"
+        android:textSize="13dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/kuning2"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toTopOf="@+id/cardviewJadwal3"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
