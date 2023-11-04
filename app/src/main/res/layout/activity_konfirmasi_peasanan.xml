@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KonfirmasiPeasanan"
+    android:background="@color/kuning2">
+
+    <ImageButton
+        android:id="@+id/btnlanjut"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/arrowback"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/keteranganMobil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Catatan Peasanan"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnlanjut"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/gambarPesanan"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="@drawable/innovabg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/keteranganMobil"
+        />
+
+    <TextView
+        android:id="@+id/inputIdentitas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_150sdp"
+        android:text="Innova Reborn 2017"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gambarPesanan"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,6 +16,9 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".KonfirmasiPeasanan"
+            android:exported="false" />
+        <activity
             android:name=".sandibaru"
             android:exported="false" />
         <activity

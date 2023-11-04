@@ -119,7 +119,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -198,8 +197,8 @@
         android:textStyle="bold"
         />
     
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardviewJadwal"
+    <Button
+        android:id="@+id/jam12"
         android:layout_width="@dimen/_90sdp"
         android:layout_height="@dimen/_50sdp"
         app:layout_constraintStart_toStartOf="parent"
@@ -207,21 +206,15 @@
         android:layout_marginTop="@dimen/_80sdp"
         android:layout_marginLeft="@dimen/_15sdp"
         app:cardCornerRadius="@dimen/_10sdp"
-        android:backgroundTint="@color/black"
-        >
-        <TextView
-            android:id="@+id/jamberangkat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="12 Jam"
-            android:textStyle="bold"
-            android:textColor="@color/kuning2"
-            android:layout_gravity="center"
-            />
-    </androidx.cardview.widget.CardView>
+        android:text="12 Jam"
+        android:textStyle="bold"
+        android:textColor="@color/kuning2"
+        android:backgroundTint="@color/black"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardviewJadwal2"
+
+
+    <Button
+        android:id="@+id/jam24"
         android:layout_width="@dimen/_90sdp"
         android:layout_height="@dimen/_50sdp"
         app:layout_constraintStart_toStartOf="parent"
@@ -230,20 +223,15 @@
         android:layout_marginLeft="@dimen/_110sdp"
         app:cardCornerRadius="@dimen/_10sdp"
         android:backgroundTint="@color/black"
-        >
-        <TextView
-            android:id="@+id/jamberangkat2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="24 jam"
-            android:textStyle="bold"
-            android:textColor="@color/kuning2"
-            android:layout_gravity="center"
-            />
-    </androidx.cardview.widget.CardView>
+        android:text="24 jam"
+        android:textStyle="bold"
+        android:textColor="@color/kuning2"
+        />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardviewJadwal3"
+
+
+    <Button
+        android:id="@+id/hari2"
         android:layout_width="@dimen/_90sdp"
         android:layout_height="@dimen/_50sdp"
         app:layout_constraintStart_toStartOf="parent"
@@ -252,17 +240,10 @@
         android:layout_marginLeft="@dimen/_210sdp"
         app:cardCornerRadius="@dimen/_10sdp"
         android:backgroundTint="@color/black"
-        >
-        <TextView
-            android:id="@+id/jamberangkat3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2 Hari"
-            android:textStyle="bold"
-            android:textColor="@color/kuning2"
-            android:layout_gravity="center"
-            />
-    </androidx.cardview.widget.CardView>
+        android:text="2 Hari"
+        android:textStyle="bold"
+        android:textColor="@color/kuning2"/>
+
 
     <Button
         android:id="@+id/Pesan"
@@ -274,7 +255,7 @@
         android:textColor="@color/kuning2"
         android:layout_marginTop="80dp"
         android:layout_marginRight="20dp"
-        app:layout_constraintTop_toTopOf="@+id/cardviewJadwal3"
+        app:layout_constraintTop_toTopOf="@+id/hari2"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 
