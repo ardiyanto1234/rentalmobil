@@ -31,10 +31,9 @@ public class registrasi extends AppCompatActivity {
 
         Username = findViewById(R.id.editTextUsername);
         Email = findViewById(R.id.editTextEmail);
-        Password = findViewById(R.id.editTextPassowrd); // Typo: Should be "Password" not "Passowrd"
+        Password = findViewById(R.id.editTextPassowrd);
         btnlanjut = findViewById(R.id.buttonLanjut);
         btnKembali = findViewById(R.id.buttonKembali);
-
         google = new GoggleUser(this);
 
         btnlanjut.setOnClickListener(new View.OnClickListener() {

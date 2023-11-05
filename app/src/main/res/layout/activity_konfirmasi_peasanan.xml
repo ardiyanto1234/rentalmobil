@@ -29,7 +29,8 @@
         app:layout_constraintTop_toTopOf="@+id/btnlanjut"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="@dimen/_20sdp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        />
 
     <ImageView
         android:id="@+id/gambarPesanan"
@@ -52,6 +53,163 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gambarPesanan"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/TextPratinjau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pratinjau"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/inputIdentitas"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:textSize="@dimen/_15sdp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/DurasiJam"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:boxCornerRadiusTopStart="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextPratinjau"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/ic_kalender"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DURASI"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:textStyle="bold"
+            android:textColor="@color/abu_abu"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 Jam"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            />
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/HargaSewa"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_150sdp"
+        app:boxCornerRadiusTopStart="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextPratinjau"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/ic_kalender"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DURASI"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:textStyle="bold"
+            android:textColor="@color/abu_abu"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 Jam"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Pemesanan"
+        app:layout_constraintTop_toBottomOf="@+id/HargaSewa"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textStyle="bold"
+        />
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/editTextAlamat"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:boxCornerRadiusTopStart="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HargaSewa"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/profil"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FIRMAN ZUBERR"
+            android:textStyle="bold"
+            android:textSize="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+        android:id="@+id/btnSelesai"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="SELESAI"
+        android:textStyle="bold"
+        android:textColor="@color/kuning2"
+        android:backgroundTint="@color/black"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toTopOf="@id/editTextAlamat"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
 
