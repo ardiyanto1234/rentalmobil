@@ -8,7 +8,7 @@
     android:background="@color/kuning2">
 
     <ImageButton
-        android:id="@+id/btnlanjut"
+        android:id="@+id/btnKembaliPesan"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginBottom="70dp"
@@ -26,7 +26,7 @@
         android:text="Catatan Peasanan"
         android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnlanjut"
+        app:layout_constraintTop_toTopOf="@+id/btnKembaliPesan"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
@@ -125,7 +125,7 @@
         <ImageView
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:background="@drawable/ic_kalender"
+            android:background="@drawable/catatan"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             />
@@ -133,7 +133,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DURASI"
+            android:text="TOTAL"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginLeft="@dimen/_50sdp"
             android:textStyle="bold"
@@ -143,7 +143,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="12 Jam"
+            android:text="150.000"
             android:textStyle="bold"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginLeft="@dimen/_50sdp"

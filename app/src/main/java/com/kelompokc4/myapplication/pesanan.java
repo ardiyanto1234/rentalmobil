@@ -22,6 +22,7 @@ import com.google.android.material.button.MaterialButton;
 
 public class pesanan extends AppCompatActivity {
 
+    Button btnpesan;
     ImageButton btnback;
     EditText Nama, Alamat, Notlp, tglLahir;
 
@@ -35,6 +36,8 @@ public class pesanan extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesanan);
+
+        btnpesan = findViewById(R.id.btnSelesai);
 
         jam12 = findViewById(R.id.jam12);
         jam24 = findViewById(R.id.jam24);
@@ -56,21 +59,25 @@ public class pesanan extends AppCompatActivity {
                 isJam12Hidden = hideButton(jam12, isJam12Hidden);
                 isJam24Hidden = hideButton(jam24, isJam24Hidden);
         });
-
-
-
-
-
-
         btnback.setOnClickListener(v->{
                 onBackPressed();
         });
+
+        btnpesan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pesan();}
+        });
     }
+    public void pesan() {
+        Intent intent = new Intent(pesanan.this, KonfirmasiPeasanan.class);
+        startActivity(intent);
+    }
+
 
     public void kembali() {
         Intent intent = new Intent(pesanan.this, detailmobil.class);
         startActivity(intent);
-
     }
     private boolean hideButton(Button button, boolean isHidden) {
         if (isHidden) {
@@ -80,8 +87,6 @@ public class pesanan extends AppCompatActivity {
             button.setEnabled(false);
             button.setVisibility(View.INVISIBLE);
         }
-//        Toast.makeText(this, String.valueOf(isHidden), Toast.LENGTH_SHORT).show();
-
         return !isHidden;
     }
 }
