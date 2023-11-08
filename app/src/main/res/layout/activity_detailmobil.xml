@@ -49,40 +49,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gambarmobil"/>
 
-    <TextView
-        android:id="@+id/keterangan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Keterangan"
-        app:layout_constraintTop_toTopOf="@+id/merkmobil"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="50dp"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"/>
-
-    <TextView
-        android:id="@+id/deskripsi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/deskripsi"
-        android:textSize="15dp"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintTop_toTopOf="@+id/keterangan"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/Sepesifikasi"
         android:layout_width="350dp"
-        android:layout_height="150dp"
+        android:layout_height="230dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/deskripsi"
-        android:layout_marginTop="130dp"
+        app:layout_constraintTop_toBottomOf="@+id/merkmobil"
+        android:layout_marginTop="30dp"
         app:cardCornerRadius="20dp">
+
+        <TextView
+            android:id="@+id/keterangan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keterangan"
+            app:layout_constraintTop_toTopOf="@+id/merkmobil"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,15 +80,17 @@
             android:text="4 Kursi"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="80dp"/>
+          android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginLeft="80dp"
+            />
         
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/seaters"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="30dp"/>
+           android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginLeft="30dp"
+            />
 
 
         <TextView
@@ -107,7 +99,7 @@
             android:text="2400 CC"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/_40sdp"
             android:layout_marginLeft="250dp"/>
 
 
@@ -115,12 +107,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/engine"
-            android:layout_gravity="center_vertical"
+           android:layout_marginTop="@dimen/_35sdp"
             android:layout_marginLeft="180dp"/>
 
 
-        
-        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bahanbakar"
+            android:layout_marginTop="@dimen/_100sdp"
+            android:layout_marginLeft="30dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solar"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_110sdp"
+            android:layout_marginLeft="90dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/platnomor"
+            android:layout_marginTop="@dimen/_105sdp"
+            android:layout_marginLeft="180dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AG 1234 HD"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_110sdp"
+            android:layout_marginLeft="240dp"/>
     </androidx.cardview.widget.CardView>
 
 
@@ -128,8 +152,8 @@
         android:id="@+id/buttonBuatPesan"
         android:layout_width="@dimen/_200sdp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/Sepesifikasi"
-        android:layout_marginTop="180dp"
+        app:layout_constraintTop_toBottomOf="@+id/Sepesifikasi"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/black"
         android:text="Pesan Sekarang"
         android:textColor="@color/kuning2"
