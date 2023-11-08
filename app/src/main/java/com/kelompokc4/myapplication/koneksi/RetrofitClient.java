@@ -15,13 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
 
-    public static final String BASE_URL = "http://172.16.106.71/easydrive/";
-
-//    public static final String BASE_URL = "http://172.16.106.70/pertama/";
-
-
-//    public static final String BASE_URL = "http://172.16.106.58/arenafinder/";
-
+    public static final String BASE_URL = "http://172.16.106.27/easydrive/";
 
     public static final String SUCCESSFUL_RESPONSE = "success";
 
