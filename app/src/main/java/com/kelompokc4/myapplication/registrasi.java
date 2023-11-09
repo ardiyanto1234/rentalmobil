@@ -20,7 +20,7 @@ import retrofit2.Response;
 public class registrasi extends AppCompatActivity {
     private Button btnlanjut;
     private GoggleUser google;
-    EditText Username, Email, Password;
+    EditText Username, Email, Alamat, Password;
     private Button btnKembali;
 
     @SuppressLint("MissingInflatedId")
@@ -31,6 +31,7 @@ public class registrasi extends AppCompatActivity {
 
         Username = findViewById(R.id.editTextUsername);
         Email = findViewById(R.id.editTextEmail);
+        Alamat = findViewById(R.id.editTextAlamat);
         Password = findViewById(R.id.editTextPassowrd);
         btnlanjut = findViewById(R.id.buttonLanjut);
         btnKembali = findViewById(R.id.buttonKembali);
@@ -49,6 +50,7 @@ public class registrasi extends AppCompatActivity {
                                     intent.putExtra(kodeotp.OTP, response.body().getData().getOtp());
                                     intent.putExtra(kodeotp.USERNAME, Username.getText().toString());
                                     intent.putExtra(kodeotp.EMAIL, Email.getText().toString());
+                                    intent.putExtra(kodeotp.ALAMAT, Alamat.getText().toString());
                                     intent.putExtra(kodeotp.PASS, Password.getText().toString());
                                     startActivity(intent);
                                 } else {

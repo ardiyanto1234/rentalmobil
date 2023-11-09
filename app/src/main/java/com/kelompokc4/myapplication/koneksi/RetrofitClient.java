@@ -15,8 +15,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
 
-    public static final String BASE_URL = "http://172.16.106.27/easydrive/";
+    public static final String BASE_URL = "http://192.168.0.109/easydrive/";
 
+    //public static final String BASE_URL = "http://172.16.106.185/easydrive/";
     public static final String SUCCESSFUL_RESPONSE = "success";
 
 

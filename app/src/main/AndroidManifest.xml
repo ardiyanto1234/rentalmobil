@@ -16,6 +16,12 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".buktipemesanan"
+            android:exported="false" />
+        <activity
+            android:name=".editprofil"
+            android:exported="false" />
+        <activity
             android:name=".detailmobilkursi"
             android:exported="false" />
         <activity

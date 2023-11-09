@@ -17,6 +17,7 @@ public interface RetrofitEndPoint {
     Call<UserResponse> driveeasy(
             @Field("username") String username,
             @Field("email") String email,
+             @Field("alamat") String alamat,
              @Field("password") String password
     );
 

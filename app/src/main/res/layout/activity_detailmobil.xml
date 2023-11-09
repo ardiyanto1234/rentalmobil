@@ -144,9 +144,10 @@
             android:textSize="16dp"
             android:textStyle="bold"
             android:layout_marginTop="@dimen/_110sdp"
-            android:layout_marginLeft="240dp"/>
-    </androidx.cardview.widget.CardView>
+            android:layout_marginLeft="240dp"
+            />
 
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/buttonBuatPesan"
@@ -160,8 +161,6 @@
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

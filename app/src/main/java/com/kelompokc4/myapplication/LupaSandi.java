@@ -19,7 +19,6 @@ import retrofit2.Response;
 public class LupaSandi extends AppCompatActivity {
     private Button btn;
     private Button btnkembali;
-
     private EditText inpEmail;
 
     @Override

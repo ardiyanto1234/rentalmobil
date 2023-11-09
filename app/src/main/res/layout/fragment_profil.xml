@@ -175,14 +175,12 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_20sdp"
-            android:backgroundTint="@color/green"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/kuning2"
             android:text="Edit Akun"
             android:textSize="@dimen/_11sdp"
             app:layout_constraintEnd_toEndOf="@+id/cv_bio"
             app:layout_constraintTop_toBottomOf="@+id/cv_bio"
-            app:strokeColor="@color/black"
-            app:strokeWidth="@dimen/_2sdp"
             android:id="@+id/edit">
 
         </com.google.android.material.button.MaterialButton>
@@ -197,8 +195,6 @@
             android:textSize="@dimen/_11sdp"
             app:layout_constraintTop_toBottomOf="@+id/cv_bio"
             app:layout_constraintStart_toStartOf="@+id/cv_bio"
-            app:strokeColor="@color/black"
-            app:strokeWidth="@dimen/_2sdp"
             android:id="@+id/logout">
 
         </com.google.android.material.button.MaterialButton>

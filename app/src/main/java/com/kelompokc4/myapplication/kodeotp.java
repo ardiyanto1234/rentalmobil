@@ -31,7 +31,7 @@ public class    kodeotp extends AppCompatActivity {
 
     private OTPTextView otpTextView;
 
-    public static String OTP = "otp", EMAIL = "email", USERNAME = "username", PASS = "passs";
+    public static String OTP = "otp", EMAIL = "email", USERNAME = "username", ALAMAT = "alamat", PASS = "passs";
 
     private String dataOtp;
 
@@ -40,7 +40,6 @@ public class    kodeotp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kodeotp);
-
         btnSelesai = findViewById(R.id.btnSelesai);
         otpTextView = findViewById(R.id.votp_inp_otp);
 
@@ -58,7 +57,7 @@ public class    kodeotp extends AppCompatActivity {
                 if (dataOtp.equals(otpTextView.getOtp())) {
                     Toast.makeText(kodeotp.this, "OTP Valid", Toast.LENGTH_SHORT).show();
 
-                    RetrofitClient.getConnection().create(RetrofitEndPoint.class).driveeasy(getIntent().getStringExtra(USERNAME), getIntent().getStringExtra(EMAIL), getIntent().getStringExtra(PASS))
+                    RetrofitClient.getConnection().create(RetrofitEndPoint.class).driveeasy(getIntent().getStringExtra(USERNAME), getIntent().getStringExtra(EMAIL), getIntent().getStringExtra(ALAMAT), getIntent().getStringExtra(PASS))
                             .enqueue(new Callback<UserResponse>() {
                                 @Override
                                 public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
