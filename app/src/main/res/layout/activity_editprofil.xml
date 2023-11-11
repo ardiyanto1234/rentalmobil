@@ -4,7 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editprofil">
+    tools:context=".editprofil"
+    android:background="@color/kuning2">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewhitam"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EDIT PROFIL"
+            android:textColor="@color/kuning2"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_gravity="center_horizontal"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile"
+        android:layout_width="@dimen/_99sdp"
+        android:layout_height="@dimen/_99sdp"
+        android:layout_gravity="center"
+        android:src="@drawable/profil"
+        tools:ignore="MissingClass,MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/cardviewhitam"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/textEditProfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profil"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile"/>
+
+    <TextView
+        android:id="@+id/TextviewMsukanUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="56dp"
+        android:text="Masukan Email Baru"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textEditProfil"
+        />
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="300dp"
+        android:layout_height="36dp"
+        android:hint="Email"
+        android:paddingLeft="20dp"
+        android:textColor="@color/black"
+        android:background="@drawable/backgroundtext"
+        app:layout_constraintTop_toBottomOf="@id/TextviewMsukanUser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    
 
     
 

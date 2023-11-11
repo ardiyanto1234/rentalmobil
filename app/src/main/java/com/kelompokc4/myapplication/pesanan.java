@@ -38,14 +38,11 @@ public class pesanan extends AppCompatActivity {
     Button btnpesan;
     ImageButton btnback;
     EditText Nama, Alamat, Notlp, tglLahir;
-
     Button jam12, jam24, hari2, pesan;
     boolean isJam12Hidden = false;
     boolean isJam24Hidden = false;
     boolean isHari2Hidden = false;
-
     private static final int REQUEST_CODE_SELECT_IMAGE = 1;
-
     private TextView uploadKtp;
 
 
@@ -55,15 +52,11 @@ public class pesanan extends AppCompatActivity {
         setContentView(R.layout.activity_pesanan);
 
         btnpesan = findViewById(R.id.btnSelesai);
-
         jam12 = findViewById(R.id.jam12);
         jam24 = findViewById(R.id.jam24);
         hari2 = findViewById(R.id.hari2);
         uploadKtp = findViewById(R.id.textViewButton2);
-
-
         btnback = findViewById(R.id.btnKembaliDetail);
-
 
         jam12.setOnClickListener(v -> {
             isJam24Hidden = hideButton(jam24, isJam24Hidden);
@@ -86,10 +79,17 @@ public class pesanan extends AppCompatActivity {
         btnpesan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pesan();
 
             }
         });
     }
+
+    private void pesan() {
+        Intent intent = new Intent(pesanan.this, KonfirmasiPeasanan.class);
+        startActivity(intent);
+    }
+
     public void selectImageFile(View view) {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -125,9 +125,6 @@ public class pesanan extends AppCompatActivity {
             // Handle jika tidak ada aplikasi yang dapat memilih file
         }
     }
-
-
-
     @SuppressLint("Range")
     private String getFileName(Uri uri) {
         String result = null;
@@ -150,7 +147,6 @@ public class pesanan extends AppCompatActivity {
         }
         return result;
     }
-
     public static String getFilePathFromUri(Context context, Uri uri) {
         String filePath = null;
         if (uri.getScheme() != null && uri.getScheme().equals("content")) {
@@ -177,7 +173,6 @@ public class pesanan extends AppCompatActivity {
         }
         return extension;
     }
-
     byte[] pathKtp;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -193,7 +188,7 @@ public class pesanan extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Your message here", Toast.LENGTH_SHORT).show();
         }
     }
-    public static byte[] uriToByteArray(Context context, Uri uri) {
+    public byte[] uriToByteArray(Context context, Uri uri) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         try {
             ContentResolver contentResolver = context.getContentResolver();
@@ -214,9 +209,8 @@ public class pesanan extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+
     }
-
-
             public void kembali () {
                 Intent intent = new Intent(pesanan.this, detailmobil.class);
                 startActivity(intent);

@@ -33,7 +33,7 @@
         android:layout_width="300dp"
         android:layout_height="36dp"
         android:background="@drawable/backgroundtext"
-        android:hint="Usnername"
+        android:hint="Username"
         android:paddingLeft="20dp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
