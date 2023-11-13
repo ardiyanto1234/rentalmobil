@@ -71,7 +71,7 @@
         app:layout_constraintTop_toTopOf="@+id/gambarPesanan"
         />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/editTextNama"
         android:layout_width="@dimen/_134sdp"
         android:layout_height="@dimen/_50sdp"
@@ -83,14 +83,10 @@
         app:boxCornerRadiusTopEnd="@dimen/_10sdp"
         app:boxCornerRadiusTopStart="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white"
         app:layout_constraintTop_toTopOf="@+id/namaLengkap"
-        >
+        />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/Alamat"
@@ -104,7 +100,7 @@
         app:layout_constraintTop_toTopOf="@+id/gambarPesanan"
         />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/editTextAlamat"
         android:layout_width="@dimen/_140sdp"
         android:layout_height="@dimen/_50sdp"
@@ -116,14 +112,12 @@
         app:boxCornerRadiusTopEnd="@dimen/_10sdp"
         app:boxCornerRadiusTopStart="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white"
         app:layout_constraintTop_toTopOf="@+id/namaLengkap"
-        >
+       />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <TextView
         android:id="@+id/Notlp"
@@ -137,7 +131,7 @@
         app:layout_constraintTop_toTopOf="@+id/gambarPesanan"
         />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/editTextNotlphone"
         android:layout_width="@dimen/_140sdp"
         android:layout_height="@dimen/_50sdp"
@@ -150,12 +144,8 @@
         app:boxCornerRadiusTopStart="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Notlp"
-        >
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+        android:background="@color/white"
+        />
 
     <TextView
         android:id="@+id/tagllahir"
@@ -169,7 +159,7 @@
         app:layout_constraintTop_toTopOf="@+id/gambarPesanan"
         />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/editTextTglLahir"
         android:layout_width="@dimen/_140sdp"
         android:layout_height="@dimen/_50sdp"
@@ -182,13 +172,8 @@
         app:boxCornerRadiusTopStart="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tagllahir"
-        >
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        android:background="@color/white"
+        />
 
         <TextView
             android:id="@+id/UploadKtp"
@@ -250,7 +235,7 @@
         android:textStyle="bold"
         />
     
-    <Button
+     <Button
         android:id="@+id/jam12"
         android:layout_width="@dimen/_90sdp"
         android:layout_height="@dimen/_50sdp"

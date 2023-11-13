@@ -1,6 +1,7 @@
 package com.kelompokc4.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -19,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.kelompokc4.myapplication.GOGGLE.GoggleUser;
 import com.kelompokc4.myapplication.koneksi.RetrofitClient;
 import com.kelompokc4.myapplication.koneksi.RetrofitEndPoint;
+import com.kelompokc4.myapplication.koneksi.UserMode;
 import com.kelompokc4.myapplication.koneksi.UserResponse;
 
 import retrofit2.Call;
@@ -70,7 +72,20 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                         if(response.body() != null && response.body().getStatus().equalsIgnoreCase("success")){
-                            startActivity(new Intent(MainActivity.this, Dasboard.class));
+
+                            SharedPreferences sharedPreferences = getSharedPreferences("prefLogin", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                                        // Simpan semua data pengguna ke SharedPreferences
+                                        UserMode user = response.body().getData();
+                            Toast.makeText(MainActivity.this, "id = "+String.valueOf(user.getId_user()), Toast.LENGTH_SHORT).show();
+                                        editor.putString("id_user",String.valueOf(user.getId_user()));
+                                        editor.putString("username", user.getUsername());
+                                        editor.putString("almat", user.getAlmat());
+                                        editor.putString("email", user.getEmail());
+                                        editor.putString("password", user.getPassword());
+                                        editor.apply();
+                                startActivity(new Intent(MainActivity.this, Dasboard.class));
                         }else{
                             Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -134,7 +149,18 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                             if (response.body() != null && response.body().getStatus().equalsIgnoreCase(RetrofitClient.SUCCESSFUL_RESPONSE)) {
+                                SharedPreferences sharedPreferences = getSharedPreferences("prefLogin", MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
 
+                                // Simpan semua data pengguna ke SharedPreferences
+                                UserMode user = response.body().getData();
+                                Toast.makeText(MainActivity.this, "id = "+String.valueOf(user.getId_user()), Toast.LENGTH_SHORT).show();
+                                editor.putString("id_user",String.valueOf(user.getId_user()));
+                                editor.putString("username", user.getUsername());
+                                editor.putString("almat", user.getAlmat());
+                                editor.putString("email", user.getEmail());
+                                editor.putString("password", user.getPassword());
+                                editor.apply();
                                 // open main activity
                                 startActivity(new Intent(MainActivity.this, Dasboard.class));
                             } else {

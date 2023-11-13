@@ -1,14 +1,16 @@
 package com.kelompokc4.myapplication.koneksi;
 
+import com.kelompokc4.myapplication.response.ResponseBooking;
 import com.kelompokc4.myapplication.response.VerifyResponse;
 
-import java.lang.ref.Reference;
-
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface RetrofitEndPoint {
@@ -17,9 +19,21 @@ public interface RetrofitEndPoint {
     Call<UserResponse> driveeasy(
             @Field("username") String username,
             @Field("email") String email,
-             @Field("alamat") String alamat,
-             @Field("password") String password
+            @Field("alamat") String alamat,
+            @Field("password") String password
     );
+@Multipart
+    @POST("Booking.php")
+    Call<ResponseBooking>PesanMobil(
+             @Part("nama") String nama,
+             @Part("no_hp") String no_hp,
+             @Part("alamat") String alamat,
+             @Part("tanggal") String tanggal,
+             @Part("jam") String jam,
+             @Part MultipartBody.Part foto_ktp,
+             @Part("id_user") int id_user
+    );
+
 
     @FormUrlEncoded
     @POST("login.php")

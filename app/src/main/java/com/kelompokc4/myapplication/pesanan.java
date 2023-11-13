@@ -3,21 +3,27 @@ package com.kelompokc4.myapplication;
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,22 +34,36 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.gson.Gson;
+import com.kelompokc4.myapplication.koneksi.RetrofitClient;
+import com.kelompokc4.myapplication.koneksi.RetrofitEndPoint;
+import com.kelompokc4.myapplication.response.ResponseBooking;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class pesanan extends AppCompatActivity {
 
     Button btnpesan;
     ImageButton btnback;
-    EditText Nama, Alamat, Notlp, tglLahir;
     Button jam12, jam24, hari2, pesan;
     boolean isJam12Hidden = false;
     boolean isJam24Hidden = false;
     boolean isHari2Hidden = false;
     private static final int REQUEST_CODE_SELECT_IMAGE = 1;
-    private TextView uploadKtp;
+    private TextView uploadKtp,textViewButton2;
+    private EditText editTextNama, editTextNotlphone, editTextAlamat, editTextTglLahir;
+    private Button selectFileButton3;
+    private String JamPesan = "";
 
 
     @Override
@@ -57,18 +77,28 @@ public class pesanan extends AppCompatActivity {
         hari2 = findViewById(R.id.hari2);
         uploadKtp = findViewById(R.id.textViewButton2);
         btnback = findViewById(R.id.btnKembaliDetail);
+        editTextAlamat = findViewById(R.id.editTextAlamat);
+        editTextNama = findViewById(R.id.editTextNama);
+        editTextTglLahir = findViewById(R.id.editTextTglLahir);
+        editTextNotlphone = findViewById(R.id.editTextNotlphone);
+        selectFileButton3 = findViewById(R.id.selectFileButton3);
+        textViewButton2 = findViewById(R.id.textViewButton2);
+
 
         jam12.setOnClickListener(v -> {
+            JamPesan = "12 Jam";
             isJam24Hidden = hideButton(jam24, isJam24Hidden);
             isHari2Hidden = hideButton(hari2, isHari2Hidden);
         });
 
         jam24.setOnClickListener(v -> {
+            JamPesan = "24 Jam";
             isJam12Hidden = hideButton(jam12, isJam12Hidden);
             isHari2Hidden = hideButton(hari2, isHari2Hidden);
         });
 
         hari2.setOnClickListener(v -> {
+            JamPesan = "2 Hari";
             isJam12Hidden = hideButton(jam12, isJam12Hidden);
             isJam24Hidden = hideButton(jam24, isJam24Hidden);
         });
@@ -79,17 +109,107 @@ public class pesanan extends AppCompatActivity {
         btnpesan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pesan();
+                        Animation shake = AnimationUtils.loadAnimation(pesanan.this, R.anim.shake_animation);
 
+                        if (TextUtils.isEmpty(editTextNama.getText())) {
+                            editTextNama.setError("Nama belum diisi");
+                            editTextAlamat.setError("Alamat belum diisi");
+                            editTextNotlphone.setError("Nomor hp belum diisi");
+                            editTextTglLahir.setError("Nomor telepon belum diisi");
+                            textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
+                            editTextNama.startAnimation(shake);
+                        } else if (TextUtils.isEmpty(editTextAlamat.getText())) {
+                            editTextAlamat.setError("Alamat belum diisi");
+                            editTextNotlphone.setError("Nomor hp belum diisi");
+                            editTextTglLahir.setError("Tanggal Lahir belum diisi");
+                            textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
+                            editTextAlamat.startAnimation(shake);
+                        } else if (TextUtils.isEmpty(editTextNotlphone.getText())) {
+                            editTextNotlphone.setError("Nomor hp belum diisi");
+                            editTextTglLahir.setError("Tanggal Lahir belum diisi");
+                            textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
+                            editTextNotlphone.startAnimation(shake);
+                        } else if (TextUtils.isEmpty(editTextTglLahir.getText())) {
+                            editTextTglLahir.setError("Nomor telepon belum diisi");
+                            textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
+                            editTextTglLahir.startAnimation(shake);
+                        } else if (TextUtils.isEmpty(selectFileButton3.getText())) {
+                            textViewButton2.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_error, 0);
+                            textViewButton2.setHintTextColor(getResources().getColor(R.color.erorText));
+                            textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
+                            textViewButton2.startAnimation(shake);
+                        } else {
+                            textViewButton2.clearAnimation();
+                            textViewButton2.setHintTextColor(null);
+
+
+                            AlertDialog.Builder builder = new AlertDialog.Builder(pesanan.this);
+                            builder.setTitle("Konfirmasi Pengiriman");
+                            builder.setMessage("Apakah Anda yakin ingin mengirim pengajuan pembuatan Nomor Induk Seniman?");
+                            builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    sendDataToServer();
+                                }
+                            });
+                            builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                            builder.show();
+                        }
+                    }
+                });
+
+    }
+
+    private void sendDataToServer() {
+        Intent intent = getIntent();
+        // Get id_user dari SharedPreferences
+        SharedPreferences sharedPreferencesSeniman = pesanan.this.getSharedPreferences("prefLogin",MODE_PRIVATE);
+        String id_user = sharedPreferencesSeniman.getString("id_user","");
+        Toast.makeText(this, "id "+id_user, Toast.LENGTH_SHORT).show();
+        // Persiapkan berkas gambar KTP Seniman, dokumen Surat Keterangan, dan gambar Pass Foto
+
+        File ktpSenimanFile = new File(textViewButton2.getText().toString());
+
+
+        // Buat RequestBody untuk berkas-berkas tersebut
+
+        RequestBody booking = RequestBody.create(MediaType.parse("multipart/form-data"), pathKtp);
+        MultipartBody.Part fotoktp = MultipartBody.Part.createFormData("foto_ktp", ktpSenimanFile.getName(), booking);
+        String Nama = editTextNama.getText().toString();
+        String alamat = editTextAlamat.getText().toString();
+        String no_hp = editTextNotlphone.getText().toString();
+        String tanggal = editTextTglLahir.getText().toString();
+
+
+
+        // Mengirim data dan berkas ke server
+        RetrofitEndPoint ardData = RetrofitClient.getConnection().create(RetrofitEndPoint.class);
+        Call<ResponseBooking> getResponse = ardData.PesanMobil(Nama,no_hp,alamat,tanggal,this.JamPesan,fotoktp,Integer.parseInt(id_user));
+        getResponse.enqueue(new Callback<ResponseBooking>() {
+            @Override
+            public void onResponse(Call<ResponseBooking> call, Response<ResponseBooking> response) {
+                System.out.println("REsponse data " + response.message() + "Response data" + response.body() + "res" + response.errorBody());
+                System.out.println("REsponse data " + response.body().getStatus() + "Response data" + response.body() + "res" + response.errorBody());
+                Gson gson = new Gson();
+                System.out.println("REsponse data " + gson.toJson(response.body()) + "Response data" + response.body() + "res" + response.errorBody());
+
+                Toast.makeText(pesanan.this, "id : "+id_user, Toast.LENGTH_SHORT).show();
+                if (response.body() != null && "success".equals(response.body().getStatus())) {
+                    startActivity(new Intent(pesanan.this, KonfirmasiPeasanan.class));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBooking> call, Throwable t) {
+                // Handle error
             }
         });
     }
-
-    private void pesan() {
-        Intent intent = new Intent(pesanan.this, KonfirmasiPeasanan.class);
-        startActivity(intent);
-    }
-
     public void selectImageFile(View view) {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
