@@ -145,7 +145,7 @@ public class pesanan extends AppCompatActivity {
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(pesanan.this);
                             builder.setTitle("Konfirmasi Pengiriman");
-                            builder.setMessage("Apakah Anda yakin ingin mengirim pengajuan pembuatan Nomor Induk Seniman?");
+                            builder.setMessage("Apakah Anda yakin dengan pesanan ini?");
                             builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {

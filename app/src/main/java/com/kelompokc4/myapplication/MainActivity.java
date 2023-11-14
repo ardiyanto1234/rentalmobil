@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView btnLupasandi;
     private GoggleUser google;
 
-    boolean passwordvisible ;
+    boolean passwordvisible;
 
     ImageView btnGoogle;
 
@@ -68,28 +68,29 @@ public class MainActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString();
                 Log.i("button", "di click");
 
-                RetrofitClient.getInstance().loginEasyDrive(username,password).enqueue(new Callback<UserResponse>() {
+                RetrofitClient.getInstance().loginEasyDrive(username, password).enqueue(new Callback<UserResponse>() {
                     @Override
                     public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                        if(response.body() != null && response.body().getStatus().equalsIgnoreCase("success")){
+                        if (response.body() != null && response.body().getStatus().equalsIgnoreCase("success")) {
 
                             SharedPreferences sharedPreferences = getSharedPreferences("prefLogin", MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                                        // Simpan semua data pengguna ke SharedPreferences
-                                        UserMode user = response.body().getData();
-                            Toast.makeText(MainActivity.this, "id = "+String.valueOf(user.getId_user()), Toast.LENGTH_SHORT).show();
-                                        editor.putString("id_user",String.valueOf(user.getId_user()));
-                                        editor.putString("username", user.getUsername());
-                                        editor.putString("almat", user.getAlmat());
-                                        editor.putString("email", user.getEmail());
-                                        editor.putString("password", user.getPassword());
-                                        editor.apply();
-                                startActivity(new Intent(MainActivity.this, Dasboard.class));
-                        }else{
+                            // Simpan semua data pengguna ke SharedPreferences
+                            UserMode user = response.body().getData();
+                            Toast.makeText(MainActivity.this, "id = " + String.valueOf(user.getId_user()), Toast.LENGTH_SHORT).show();
+                            editor.putString("id_user", String.valueOf(user.getId_user()));
+                            editor.putString("username", user.getUsername());
+                            editor.putString("almat", user.getAlmat());
+                            editor.putString("email", user.getEmail());
+                            editor.putString("password", user.getPassword());
+                            editor.apply();
+                            startActivity(new Intent(MainActivity.this, Dasboard.class));
+                        } else {
                             Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
+
                     @Override
                     public void onFailure(Call<UserResponse> call, Throwable t) {
                     }
@@ -135,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -154,8 +156,8 @@ public class MainActivity extends AppCompatActivity {
 
                                 // Simpan semua data pengguna ke SharedPreferences
                                 UserMode user = response.body().getData();
-                                Toast.makeText(MainActivity.this, "id = "+String.valueOf(user.getId_user()), Toast.LENGTH_SHORT).show();
-                                editor.putString("id_user",String.valueOf(user.getId_user()));
+                                Toast.makeText(MainActivity.this, "id = " + String.valueOf(user.getId_user()), Toast.LENGTH_SHORT).show();
+                                editor.putString("id_user", String.valueOf(user.getId_user()));
                                 editor.putString("username", user.getUsername());
                                 editor.putString("almat", user.getAlmat());
                                 editor.putString("email", user.getEmail());
@@ -167,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
+
                         @Override
                         public void onFailure(Call<UserResponse> call, Throwable t) {
                             Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
@@ -174,10 +177,12 @@ public class MainActivity extends AppCompatActivity {
                     });
         }
     }
-    public void lupasandi(){
+
+    public void lupasandi() {
         Intent intent = new Intent(MainActivity.this, LupaSandi.class);
         startActivity(intent);
     }
+
     public void lanjut() {
         Intent intent = new Intent(this, registrasi.class);
         startActivity(intent);

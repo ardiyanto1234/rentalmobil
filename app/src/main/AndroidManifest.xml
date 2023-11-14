@@ -46,14 +46,6 @@
             android:name=".otplupasandi"
             android:exported="false" />
         <activity
-            android:name=".konfirmaspembayran"
-            android:exported="false" />
-        <activity
-            android:name=".konfirmasipembayran"
-            android:exported="false"
-            android:label="@string/title_activity_konfirmasipembayaran"
-            android:theme="@style/Theme.MyApplication" />
-        <activity
             android:name=".kodeotp"
             android:exported="false" />
         <activity
@@ -79,7 +71,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
