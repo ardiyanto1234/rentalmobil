@@ -8,10 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class detailmobilkursi4 extends AppCompatActivity {
 
-    ImageButton btnback;
+    ImageView btnback;
     Button btnpesan;
 
     @SuppressLint("WrongViewCast")
@@ -26,7 +27,7 @@ public class detailmobilkursi4 extends AppCompatActivity {
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                kembali();
+                finish();
             }
         });
         btnpesan.setOnClickListener(new View.OnClickListener() {
