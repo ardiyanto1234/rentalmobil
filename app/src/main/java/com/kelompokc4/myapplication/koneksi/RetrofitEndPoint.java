@@ -1,8 +1,10 @@
 package com.kelompokc4.myapplication.koneksi;
 
+import com.kelompokc4.myapplication.response.EmailCheckResponse;
 import com.kelompokc4.myapplication.response.GetMobil;
 import com.kelompokc4.myapplication.response.ResponseBooking;
 import com.kelompokc4.myapplication.response.VerifyResponse;
+import com.kelompokc4.myapplication.response.getEmailRegis;
 
 import java.util.List;
 
@@ -117,5 +119,10 @@ public interface RetrofitEndPoint {
 
     @GET("getMobil.php")
     Call<List<GetMobil>> getMobil();
+    @GET("getEmailRegis.php")
+    Call<List<getEmailRegis>> getEmailRegis();
+    @GET("checkEmail.php")
+    Call<EmailCheckResponse> checkEmail(@Query("email") String email);
+
 
 }

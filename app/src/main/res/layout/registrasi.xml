@@ -45,6 +45,7 @@
         />
 
     <EditText
+        android:paddingEnd="@dimen/_10sdp"
         android:id="@+id/editTextUsername"
         android:layout_width="300dp"
         android:layout_height="36dp"
@@ -70,6 +71,7 @@
         />
 
     <EditText
+        android:paddingEnd="@dimen/_10sdp"
         android:id="@+id/editTextEmail"
         android:layout_width="300dp"
         android:layout_height="36dp"
@@ -97,6 +99,7 @@
         />
 
     <EditText
+        android:paddingEnd="@dimen/_10sdp"
         android:id="@+id/editTextAlamat"
         android:layout_width="300dp"
         android:layout_height="36dp"
@@ -127,7 +130,10 @@
         android:layout_height="36dp"
         android:hint="Password"
         android:paddingLeft="20dp"
+        android:inputType="textPassword"
+        android:drawableEnd="@drawable/visibleoff"
         android:maxLength="8"
+        android:paddingEnd="@dimen/_10sdp"
         android:textColor="@color/black"
         android:background="@drawable/backgroundtext"
         android:layout_marginTop="25dp"

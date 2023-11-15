@@ -4,26 +4,42 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import com.kelompokc4.myapplication.koneksi.UserMode;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 public class Profil extends Fragment {
 
     private Button btnLogout;
-    private Button btneditprofil;
-
+    private Button btnEditProfil;
+    private TextView usernameTextView, emailTextView, alamatTextView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profil, container, false);
+
+        // Inisialisasi TextView
+        usernameTextView = view.findViewById(R.id.tv_username);
+        emailTextView = view.findViewById(R.id.tv_email_profile);
+        alamatTextView = view.findViewById(R.id.tv_alamat_profile);
+
+        // Ambil data pengguna dari SharedPreferences
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("prefLogin", Context.MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", "");
+        String email = sharedPreferences.getString("email", "");
+        String alamat = sharedPreferences.getString("almat", "");
+
+        // Set data pengguna ke TextView
+        usernameTextView.setText(username);
+        emailTextView.setText(email);
+        alamatTextView.setText(alamat);
+
         return view;
     }
 
@@ -32,7 +48,7 @@ public class Profil extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         btnLogout = view.findViewById(R.id.logout);
-        btneditprofil = view.findViewById(R.id.edit);
+        btnEditProfil = view.findViewById(R.id.edit);
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,30 +56,25 @@ public class Profil extends Fragment {
                 logout();
             }
         });
-        btneditprofil.setOnClickListener(new View.OnClickListener() {
+
+        btnEditProfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplication(), editprofil.class);
+                Intent intent = new Intent(getActivity(), editprofil.class);
                 startActivity(intent);
             }
         });
     }
-    public void logout() {
 
-
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("prefLogin", Context.MODE_PRIVATE);
+    private void logout() {
+        // Hapus semua data pengguna dari SharedPreferences
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("prefLogin", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        // Simpan semua data pengguna ke SharedPreferences
-
-        editor.putString("id_user",null);
-        editor.putString("username",null);
-        editor.putString("almat",null);
-        editor.putString("email", null);
-        editor.putString("password", null);
+        editor.clear();
         editor.apply();
+
         Intent intent = new Intent(requireActivity(), MainActivity.class);
         startActivity(intent);
-
+        requireActivity().finish();  // Menutup activity saat ini setelah logout
     }
 }

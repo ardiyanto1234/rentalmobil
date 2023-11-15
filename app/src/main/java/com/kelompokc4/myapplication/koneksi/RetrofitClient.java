@@ -15,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
 
-    public static final String BASE_URL = "http://192.168.0.108/easydrive/";
+    public static final String BASE_URL = "http://192.168.0.102/easydrive/";
 
     //public static final String BASE_URL = "http://172.16.106.185/easydrive/";
     public static final String SUCCESSFUL_RESPONSE = "success";
@@ -33,10 +33,11 @@ public class RetrofitClient {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(interceptor)
-                .connectTimeout(5, TimeUnit.SECONDS)
-                .writeTimeout(5,TimeUnit.SECONDS)
+                .connectTimeout(15, TimeUnit.SECONDS) // Atur waktu timeout koneksi
+                .readTimeout(15, TimeUnit.SECONDS)    // Atur waktu timeout baca
+                .writeTimeout(15, TimeUnit.SECONDS)   // Atur waktu timeout tulis
                 .build();
+
 
 
         return new Retrofit.Builder()
