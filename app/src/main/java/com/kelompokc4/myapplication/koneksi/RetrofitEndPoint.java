@@ -1,7 +1,10 @@
 package com.kelompokc4.myapplication.koneksi;
 
+import com.kelompokc4.myapplication.response.GetMobil;
 import com.kelompokc4.myapplication.response.ResponseBooking;
 import com.kelompokc4.myapplication.response.VerifyResponse;
+
+import java.util.List;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
@@ -31,7 +34,8 @@ public interface RetrofitEndPoint {
              @Part("tanggal") String tanggal,
              @Part("jam") String jam,
              @Part MultipartBody.Part foto_ktp,
-             @Part("id_user") int id_user
+             @Part("id_user") int id_user,
+             @Part("id_mobil") int id_mobil
     );
 
 
@@ -110,5 +114,8 @@ public interface RetrofitEndPoint {
             @Field("type") String type,
             @Field("action") String action
     );
+
+    @GET("getMobil.php")
+    Call<List<GetMobil>> getMobil();
 
 }

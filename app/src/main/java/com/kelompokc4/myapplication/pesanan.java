@@ -184,12 +184,13 @@ public class pesanan extends AppCompatActivity {
         String alamat = editTextAlamat.getText().toString();
         String no_hp = editTextNotlphone.getText().toString();
         String tanggal = editTextTglLahir.getText().toString();
-
+        Intent receivedIntent = getIntent();
+        int idMobil = receivedIntent.getIntExtra("idMobil", -1);
 
 
         // Mengirim data dan berkas ke server
         RetrofitEndPoint ardData = RetrofitClient.getConnection().create(RetrofitEndPoint.class);
-        Call<ResponseBooking> getResponse = ardData.PesanMobil(Nama,no_hp,alamat,tanggal,this.JamPesan,fotoktp,Integer.parseInt(id_user));
+        Call<ResponseBooking> getResponse = ardData.PesanMobil(Nama,no_hp,alamat,tanggal,this.JamPesan,fotoktp,Integer.parseInt(id_user),idMobil);
         getResponse.enqueue(new Callback<ResponseBooking>() {
             @Override
             public void onResponse(Call<ResponseBooking> call, Response<ResponseBooking> response) {

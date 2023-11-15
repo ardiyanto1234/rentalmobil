@@ -77,7 +77,7 @@
                     android:textSize="@dimen/_13sdp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_nama_lengkap" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_username" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_alamat_profile"
@@ -91,29 +91,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_email_profile" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_kategori_profile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:text="Kategori Pekerjaan : Mahasiswa"
-                    android:textSize="@dimen/_12sdp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_alamat_profile" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_nama_lengkap"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_6sdp"
-                    android:text="Nama Lengkap : Moch Rifaul Ardiyanto"
-                    android:textSize="@dimen/_10sdp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_username"
-
-                    />
 
 
                 <com.google.android.material.textview.MaterialTextView
@@ -127,42 +104,9 @@
 
                 </com.google.android.material.textview.MaterialTextView>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/nama_lengkap_profile"
-                    android:layout_width="@dimen/_204sdp"
-                    android:layout_height="@dimen/_16sdp"
-                    android:layout_marginStart="-8dp"
-                    android:layout_marginTop="@dimen/_7sdp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tv_nama_lengkap"
-                    app:layout_constraintTop_toBottomOf="@id/username_profile">
 
-                </com.google.android.material.textview.MaterialTextView>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/email_profile"
-                    android:layout_width="@dimen/_204sdp"
-                    android:layout_height="@dimen/_16sdp"
-                    android:layout_marginStart="@dimen/_1sdp"
-                    android:layout_marginTop="@dimen/_7sdp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tv_email_profile"
-                    app:layout_constraintTop_toBottomOf="@id/nama_lengkap_profile">
 
-                </com.google.android.material.textview.MaterialTextView>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/alamat_profile"
-                    android:layout_width="@dimen/_204sdp"
-                    android:layout_height="@dimen/_16sdp"
-                    android:layout_marginStart="@dimen/_11sdp"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/tv_alamat_profile"
-                    app:layout_constraintTop_toBottomOf="@+id/email_profile">
-
-                </com.google.android.material.textview.MaterialTextView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

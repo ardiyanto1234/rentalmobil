@@ -14,12 +14,16 @@ public class detailmobil extends AppCompatActivity {
 
     ImageButton gambarbtn;
     Button btn;
-
+    int idMobil;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailmobil);
+
+        // Menerima data dari Intent
+        Intent receivedIntent = getIntent();
+        idMobil = receivedIntent.getIntExtra("idMobil", -1);
 
         gambarbtn = findViewById(R.id.arrowback);
         btn = findViewById(R.id.buttonBuatPesan);
@@ -40,6 +44,7 @@ public class detailmobil extends AppCompatActivity {
     }
         public void pesan(){
             Intent intent = new Intent(detailmobil.this, pesanan.class);
+            intent.putExtra("idMobil", idMobil);
             startActivity(intent);
  }
 }
