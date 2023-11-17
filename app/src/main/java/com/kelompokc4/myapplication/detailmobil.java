@@ -23,8 +23,8 @@ public class detailmobil extends AppCompatActivity {
 
         // Menerima data dari Intent
         Intent receivedIntent = getIntent();
-        idMobil = receivedIntent.getIntExtra("idMobil", -1);
-
+        idMobil = receivedIntent.getIntExtra("id_mobil", -1);
+        Toast.makeText(this, "id " +idMobil, Toast.LENGTH_SHORT).show();
         gambarbtn = findViewById(R.id.arrowback);
         btn = findViewById(R.id.buttonBuatPesan);
 
@@ -44,7 +44,7 @@ public class detailmobil extends AppCompatActivity {
     }
         public void pesan(){
             Intent intent = new Intent(detailmobil.this, pesanan.class);
-            intent.putExtra("idMobil", idMobil);
+            intent.putExtra("id_mobil", getIntent().getIntExtra("id_mobil", 1));
             startActivity(intent);
  }
 }

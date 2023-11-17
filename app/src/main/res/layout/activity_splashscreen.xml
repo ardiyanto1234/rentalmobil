@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Easy Drive"
+        android:text="Drive Easy"
         android:textStyle="italic"
         android:layout_marginTop="500dp"
         android:textColor="@color/white"

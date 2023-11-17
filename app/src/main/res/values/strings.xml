@@ -1,5 +1,5 @@
 <resources>
-    <string name="Easy_Drive">Easy Drive</string>
+    <string name="Easy_Drive">Drive Easy</string>
     <string-array name="countries_arry">
         <item>Afganistan</item>
         <item>albania</item>

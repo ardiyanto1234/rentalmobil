@@ -1,64 +1,85 @@
 package com.kelompokc4.myapplication;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Ulasan#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.kelompokc4.myapplication.koneksi.RetrofitClient;
+import com.kelompokc4.myapplication.koneksi.RetrofitEndPoint;
+import com.kelompokc4.myapplication.koneksi.UserResponse;
+import com.kelompokc4.myapplication.response.ResponseBooking;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Ulasan extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private EditText editTextUlasan;
+    private Button buttonSubmit;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Ulasan() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Ulasan.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Ulasan newInstance(String param1, String param2) {
-        Ulasan fragment = new Ulasan();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @SuppressLint("MissingInflatedId")
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_ulasan, container, false);
+        SharedPreferences sharedPreferencesSeniman = Ulasan.this.getActivity().getSharedPreferences("prefLogin", Context.MODE_PRIVATE);
+        String id_user = sharedPreferencesSeniman.getString("id_user","");
+        editTextUlasan = view.findViewById(R.id.editTextUlasan);
+        buttonSubmit = view.findViewById(R.id.buttonSubmit);
+
+        buttonSubmit.setOnClickListener(view1 -> {
+            String ulasan = editTextUlasan.getText().toString();
+            RetrofitEndPoint ardData = RetrofitClient.getConnection().create(RetrofitEndPoint.class);
+            Call<UserResponse> getResponse = ardData.ulasan(ulasan,Integer.parseInt(id_user));
+            getResponse.enqueue(new Callback<UserResponse>() {
+                @Override
+                public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+
+                    if (response.body().getStatus().equals("Berhasil")){
+//                        startActivity(new Intent(Ulasan.this,KonfirmasiUlasan.class));
+                        Toast.makeText(getActivity(), "Ulasan Terkirim", Toast.LENGTH_SHORT).show();
+                    }else if(response.body().getStatus().equals("Gagal")){
+                        Toast.makeText(getActivity(), "Ulasan Gagal Dikirim", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<UserResponse> call, Throwable t) {
+                    Toast.makeText(getActivity(), "Ulasan Gagal "+t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                }
+            });
+        });
+
+        return view;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ulasan, container, false);
-    }
+
+
+
 }

@@ -19,8 +19,8 @@ public class Splashscreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
         SharedPreferences sharedPreferences = this.getSharedPreferences("prefLogin", Context.MODE_PRIVATE);
-        String id_user = sharedPreferences.getString("id_user", "");
-        Toast.makeText(this, "test : "+id_user, Toast.LENGTH_SHORT).show();
+        String id_user = sharedPreferences.getString("username", "");
+        Toast.makeText(this, "Selamat Datang "+id_user, Toast.LENGTH_SHORT).show();
 
         if (!id_user.isEmpty()) {
             new Handler().postDelayed(new Runnable() {

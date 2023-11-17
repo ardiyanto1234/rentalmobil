@@ -3,7 +3,7 @@ package com.kelompokc4.myapplication.koneksi;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class  UserResponse {
+public class UserResponse {
 
     @Expose
     @SerializedName("status")
@@ -15,7 +15,7 @@ public class  UserResponse {
     @SerializedName("data")
     private UserMode data;
 
-    public UserResponse(String status, String message, UserMode data){
+    public UserResponse(String status, String message, UserMode data) {
         this.status = status;
         this.message = message;
         this.data = data;

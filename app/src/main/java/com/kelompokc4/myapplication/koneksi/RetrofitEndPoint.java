@@ -80,6 +80,13 @@ public interface RetrofitEndPoint {
     Call<UserResponse> google_login(
             @Field("email") String email
     );
+
+    @FormUrlEncoded
+    @POST("Ulasan.php")
+    Call<UserResponse> ulasan(
+            @Field("text_ulasan") String ulasan,
+            @Field("id_user") int id_user
+    );
  /*   @FormUrlEncoded
     @POST("users/login_google.php")
     Call<UsersResponse> loginGoogle(

@@ -31,7 +31,7 @@
         android:id="@+id/gambarmobil"
         android:layout_width="320dp"
         android:layout_height="200dp"
-        android:background="@drawable/innovabg"
+        android:background="@drawable/kursi4"
         android:layout_marginTop="50dp"
         app:layout_constraintTop_toTopOf="@+id/detail"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
         android:id="@+id/merkmobil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Innova Reborn 2018"
+        android:text="Honda Jazz"
         android:layout_marginTop="200dp"
         android:textSize="30dp"
         android:textStyle="bold|italic"
@@ -77,18 +77,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="7 Kursi"
+            android:text="4 Kursi"
             android:textSize="20dp"
             android:textStyle="bold"
-          android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_40sdp"
             android:layout_marginLeft="80dp"
             />
-        
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/seaters"
-           android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginLeft="30dp"
             />
 
@@ -96,7 +96,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2400 CC"
+            android:text="1800 CC"
             android:textSize="20dp"
             android:textStyle="bold"
             android:layout_marginTop="@dimen/_40sdp"
@@ -107,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/engine"
-           android:layout_marginTop="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_35sdp"
             android:layout_marginLeft="180dp"/>
 
 
@@ -122,7 +122,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Solar"
+            android:text="Bensin"
             android:textSize="20dp"
             android:textStyle="bold"
             android:layout_marginTop="@dimen/_110sdp"

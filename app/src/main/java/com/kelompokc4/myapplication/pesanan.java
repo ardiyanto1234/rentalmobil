@@ -1,6 +1,7 @@
 package com.kelompokc4.myapplication;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -26,6 +27,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -43,6 +45,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -60,10 +65,12 @@ public class pesanan extends AppCompatActivity {
     boolean isJam24Hidden = false;
     boolean isHari2Hidden = false;
     private static final int REQUEST_CODE_SELECT_IMAGE = 1;
-    private TextView uploadKtp,textViewButton2;
+    private TextView uploadKtp, textViewButton2;
     private EditText editTextNama, editTextNotlphone, editTextAlamat, editTextTglLahir;
     private Button selectFileButton3;
     private String JamPesan = "";
+    private EditText editTextCalender;
+    private Calendar myCalender;
 
 
     @Override
@@ -83,8 +90,19 @@ public class pesanan extends AppCompatActivity {
         editTextNotlphone = findViewById(R.id.editTextNotlphone);
         selectFileButton3 = findViewById(R.id.selectFileButton3);
         textViewButton2 = findViewById(R.id.textViewButton2);
+        editTextCalender = findViewById(R.id.editTextTglLahir);
 
 
+        //inisialisasi objel calender
+        myCalender = Calendar.getInstance();
+        updateLabel();
+
+        editTextTglLahir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDataPickerDialog();
+            }
+        });
         jam12.setOnClickListener(v -> {
             JamPesan = "12 Jam";
             isJam24Hidden = hideButton(jam24, isJam24Hidden);
@@ -109,61 +127,79 @@ public class pesanan extends AppCompatActivity {
         btnpesan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                        Animation shake = AnimationUtils.loadAnimation(pesanan.this, R.anim.shake_animation);
+                Animation shake = AnimationUtils.loadAnimation(pesanan.this, R.anim.shake_animation);
 
-                        if (TextUtils.isEmpty(editTextNama.getText())) {
-                            editTextNama.setError("Nama belum diisi");
-                            editTextAlamat.setError("Alamat belum diisi");
-                            editTextNotlphone.setError("Nomor hp belum diisi");
-                            editTextTglLahir.setError("Nomor telepon belum diisi");
-                            textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
-                            editTextNama.startAnimation(shake);
-                        } else if (TextUtils.isEmpty(editTextAlamat.getText())) {
-                            editTextAlamat.setError("Alamat belum diisi");
-                            editTextNotlphone.setError("Nomor hp belum diisi");
-                            editTextTglLahir.setError("Tanggal Lahir belum diisi");
-                            textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
-                            editTextAlamat.startAnimation(shake);
-                        } else if (TextUtils.isEmpty(editTextNotlphone.getText())) {
-                            editTextNotlphone.setError("Nomor hp belum diisi");
-                            editTextTglLahir.setError("Tanggal Lahir belum diisi");
-                            textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
-                            editTextNotlphone.startAnimation(shake);
-                        } else if (TextUtils.isEmpty(editTextTglLahir.getText())) {
-                            editTextTglLahir.setError("Nomor telepon belum diisi");
-                            textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
-                            editTextTglLahir.startAnimation(shake);
-                        } else if (TextUtils.isEmpty(selectFileButton3.getText())) {
-                            textViewButton2.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_error, 0);
-                            textViewButton2.setHintTextColor(getResources().getColor(R.color.erorText));
-                            textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
-                            textViewButton2.startAnimation(shake);
-                        } else {
-                            textViewButton2.clearAnimation();
-                            textViewButton2.setHintTextColor(null);
+                if (TextUtils.isEmpty(editTextNama.getText())) {
+                    editTextNama.setError("Nama belum diisi");
+                    editTextAlamat.setError("Alamat belum diisi");
+                    editTextNotlphone.setError("Nomor hp belum diisi");
+                    editTextTglLahir.setError("Nomor telepon belum diisi");
+                    textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
+                    editTextNama.startAnimation(shake);
+                } else if (TextUtils.isEmpty(editTextAlamat.getText())) {
+                    editTextAlamat.setError("Alamat belum diisi");
+                    editTextNotlphone.setError("Nomor hp belum diisi");
+                    editTextTglLahir.setError("Tanggal Lahir belum diisi");
+                    textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
+                    editTextAlamat.startAnimation(shake);
+                } else if (TextUtils.isEmpty(editTextNotlphone.getText())) {
+                    editTextNotlphone.setError("Nomor hp belum diisi");
+                    editTextTglLahir.setError("Tanggal Lahir belum diisi");
+                    textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
+                    editTextNotlphone.startAnimation(shake);
+                } else if (TextUtils.isEmpty(editTextTglLahir.getText())) {
+                    editTextTglLahir.setError("Nomor telepon belum diisi");
+                    textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
+                    editTextTglLahir.startAnimation(shake);
+                } else if (TextUtils.isEmpty(selectFileButton3.getText())) {
+                    textViewButton2.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_error, 0);
+                    textViewButton2.setHintTextColor(getResources().getColor(R.color.erorText));
+                    textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
+                    textViewButton2.startAnimation(shake);
+                } else {
+                    textViewButton2.clearAnimation();
+                    textViewButton2.setHintTextColor(null);
 
 
-                            AlertDialog.Builder builder = new AlertDialog.Builder(pesanan.this);
-                            builder.setTitle("Konfirmasi Pengiriman");
-                            builder.setMessage("Apakah Anda yakin dengan pesanan ini?");
-                            builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    sendDataToServer();
-                                }
-                            });
-                            builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.dismiss();
-                                }
-                            });
-                            builder.show();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(pesanan.this);
+                    builder.setTitle("Konfirmasi Pengiriman");
+                    builder.setMessage("Apakah Anda yakin dengan pesanan ini?");
+                    builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            sendDataToServer();
                         }
-                    }
-                });
-
+                    });
+                    builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.show();
+                }
+            }
+        });
     }
+    private void showDataPickerDialog() {
+        new DatePickerDialog(this, dateSetListener, myCalender.get(Calendar.YEAR), myCalender.get(Calendar.MONTH), myCalender.get(Calendar.DAY_OF_MONTH)).show();
+    }
+    private void updateLabel() {
+        // Mengupdate tanggal pada EditText
+        String myFormat = "yyyy/MM/d";
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.getDefault());
+        editTextTglLahir.setText(sdf.format(myCalender.getTime()));
+    }
+    // Listener untuk menangkap perubahan tanggal pada DatePickerDialog
+    private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            myCalender.set(Calendar.YEAR, year);
+            myCalender.set(Calendar.MONTH, monthOfYear);
+            myCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateLabel();
+        }
+    };
 
     private void sendDataToServer() {
         Intent intent = getIntent();
@@ -185,7 +221,9 @@ public class pesanan extends AppCompatActivity {
         String no_hp = editTextNotlphone.getText().toString();
         String tanggal = editTextTglLahir.getText().toString();
         Intent receivedIntent = getIntent();
-        int idMobil = receivedIntent.getIntExtra("idMobil", -1);
+        int idMobil = getIntent().getIntExtra("id_mobil", -1);
+        Toast.makeText(this, "ID MOBILE : " + idMobil, Toast.LENGTH_SHORT).show();
+
 
 
         // Mengirim data dan berkas ke server
