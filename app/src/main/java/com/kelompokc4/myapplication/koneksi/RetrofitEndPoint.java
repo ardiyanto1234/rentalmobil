@@ -131,5 +131,14 @@ public interface RetrofitEndPoint {
     @GET("checkEmail.php")
     Call<EmailCheckResponse> checkEmail(@Query("email") String email);
 
+    @FormUrlEncoded
+    @POST("editprofil.php")
+    Call<UserResponse> editprofil(
+            @Field("id_user") String iduser,
+            @Field("username") String username,
+            @Field("email") String email,
+            @Field("alamat") String alamat
+    );
+
 
 }

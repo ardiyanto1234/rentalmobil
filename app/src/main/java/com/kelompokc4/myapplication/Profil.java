@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 
 public class Profil extends Fragment {
 
+    public static int SavedState;
+    public static final int EDIT_PROFILE_REQUEST = 1;
     private Button btnLogout;
     private Button btnEditProfil;
     private TextView usernameTextView, emailTextView, alamatTextView;
@@ -50,6 +52,7 @@ public class Profil extends Fragment {
         btnLogout = view.findViewById(R.id.logout);
         btnEditProfil = view.findViewById(R.id.edit);
 
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +64,7 @@ public class Profil extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), editprofil.class);
-                startActivity(intent);
+               startActivity(intent);
             }
         });
     }

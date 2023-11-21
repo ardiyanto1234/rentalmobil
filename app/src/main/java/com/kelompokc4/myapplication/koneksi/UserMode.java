@@ -20,6 +20,8 @@ public class UserMode {
     @SerializedName("password")
     private String password;
 
+
+
     public int getId_user() {
         return id_user;
     }

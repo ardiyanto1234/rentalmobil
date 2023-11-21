@@ -67,7 +67,7 @@
         android:hint="Nama"
         android:paddingLeft="20dp"
         android:textColor="@color/black"
-        android:background="@drawable/backgroundtext"
+        android:background="@drawable/editextputih"
         app:layout_constraintTop_toBottomOf="@id/TextviewMsukanUser"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,19 +80,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="56dp"
-        android:text="Masukan No.hp Baru"
+        android:text="Masukan email Baru"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/editTextUsername"
         />
 
     <EditText
-        android:id="@+id/editTextNoHp"
+        android:id="@+id/editTextEmail"
         android:layout_width="300dp"
         android:layout_height="36dp"
-        android:hint="No.hp"
+        android:hint="email"
         android:paddingLeft="20dp"
         android:textColor="@color/black"
-        android:background="@drawable/backgroundtext"
+        android:background="@drawable/editextputih"
         app:layout_constraintTop_toBottomOf="@id/TextviewMsukanNoHp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +106,7 @@
         android:layout_marginTop="56dp"
         android:text="Masukan Alamat Baru"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/editTextNoHp"
+        app:layout_constraintTop_toTopOf="@id/editTextEmail"
         />
 
     <EditText
@@ -116,7 +116,7 @@
         android:hint="Alamat"
         android:paddingLeft="20dp"
         android:textColor="@color/black"
-        android:background="@drawable/backgroundtext"
+        android:background="@drawable/editextputih"
         app:layout_constraintTop_toBottomOf="@id/TextviewMsukanAlamat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

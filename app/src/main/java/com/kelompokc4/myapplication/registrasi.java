@@ -78,34 +78,37 @@ public class registrasi extends AppCompatActivity {
                     }
 
                     // Pemeriksaan karakter kapital, huruf kecil, dan angka pada password
-                    if (!passwordString.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).+$")) {
+                    else if
+                    (!passwordString.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).+$")) {
                         Password.setError("Password harus mengandung karakter kapital, huruf kecil, dan angka");
                     }
+                    else {
 
-                    // Jika pemeriksaan panjang dan karakter password lulus, lanjutkan dengan mengirim OTP
-                    RetrofitClient.getInstance().sendEmail(Email.getText().toString(), "SignUp", "new")
-                            .enqueue(new Callback<VerifyResponse>() {
-                                @Override
-                                public void onResponse(Call<VerifyResponse> call, Response<VerifyResponse> response) {
-                                    if (response.body() != null && response.body().getStatus().equalsIgnoreCase("success")) {
-                                        Toast.makeText(registrasi.this, "OTP berhasil dikirim", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(registrasi.this, kodeotp.class);
-                                        intent.putExtra(kodeotp.OTP, response.body().getData().getOtp());
-                                        intent.putExtra(kodeotp.USERNAME, Username.getText().toString());
-                                        intent.putExtra(kodeotp.EMAIL, Email.getText().toString());
-                                        intent.putExtra(kodeotp.ALAMAT, Alamat.getText().toString());
-                                        intent.putExtra(kodeotp.PASS, Password.getText().toString());
-                                        startActivity(intent);
-                                    } else {
-                                        Toast.makeText(registrasi.this, "OTP gagal dikirim", Toast.LENGTH_SHORT).show();
+                        // Jika pemeriksaan panjang dan karakter password lulus, lanjutkan dengan mengirim OTP
+                        RetrofitClient.getInstance().sendEmail(Email.getText().toString(), "SignUp", "new")
+                                .enqueue(new Callback<VerifyResponse>() {
+                                    @Override
+                                    public void onResponse(Call<VerifyResponse> call, Response<VerifyResponse> response) {
+                                        if (response.body() != null && response.body().getStatus().equalsIgnoreCase("success")) {
+                                            Toast.makeText(registrasi.this, "OTP berhasil dikirim", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(registrasi.this, kodeotp.class);
+                                            intent.putExtra(kodeotp.OTP, response.body().getData().getOtp());
+                                            intent.putExtra(kodeotp.USERNAME, Username.getText().toString());
+                                            intent.putExtra(kodeotp.EMAIL, Email.getText().toString());
+                                            intent.putExtra(kodeotp.ALAMAT, Alamat.getText().toString());
+                                            intent.putExtra(kodeotp.PASS, Password.getText().toString());
+                                            startActivity(intent);
+                                        } else {
+                                            Toast.makeText(registrasi.this, "OTP gagal dikirim", Toast.LENGTH_SHORT).show();
+                                        }
                                     }
-                                }
 
-                                @Override
-                                public void onFailure(Call<VerifyResponse> call, Throwable t) {
-                                    t.printStackTrace();
-                                }
-                            });
+                                    @Override
+                                    public void onFailure(Call<VerifyResponse> call, Throwable t) {
+                                        t.printStackTrace();
+                                    }
+                                });
+                    }
                 }
             }
         });

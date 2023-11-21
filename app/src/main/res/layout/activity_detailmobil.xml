@@ -41,7 +41,7 @@
         android:id="@+id/merkmobil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Innova Reborn 2018"
+        android:text="Innova Reborn "
         android:layout_marginTop="200dp"
         android:textSize="30dp"
         android:textStyle="bold|italic"
@@ -54,12 +54,14 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/Sepesifikasi"
         android:layout_width="350dp"
-        android:layout_height="230dp"
+        android:layout_height="280dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/merkmobil"
         android:layout_marginTop="30dp"
         app:cardCornerRadius="20dp">
+
+
 
         <TextView
             android:id="@+id/keterangan"
@@ -146,6 +148,42 @@
             android:layout_marginTop="@dimen/_110sdp"
             android:layout_marginLeft="240dp"
             />
+
+        <ImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/logo_warna"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="@dimen/_20sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Putih"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_170sdp"
+            android:layout_marginLeft="90dp"
+            />
+
+        <ImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/ic_kalender"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="@dimen/_135sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_170sdp"
+            android:layout_marginLeft="250dp"
+            />
+
+
 
     </androidx.cardview.widget.CardView>
 
