@@ -19,6 +19,9 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".Konfirmasi_ulasan"
+            android:exported="false" />
+        <activity
             android:name=".detailkursi4"
             android:exported="false" />
         <activity
@@ -31,7 +34,7 @@
             android:name=".detailmobilkursi"
             android:exported="false" />
         <activity
-            android:name=".detailmobilkursi4"
+            android:name=".daftarmobilkursi4"
             android:exported="false" />
         <activity
             android:name=".KonfirmasiPeasanan"

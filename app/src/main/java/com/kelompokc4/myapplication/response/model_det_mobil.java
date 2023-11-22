@@ -1,24 +1,24 @@
 package com.kelompokc4.myapplication.response;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
-
-public class GetMobil {
-    private int id_mobil, id_detail_mobil;
-    private String merk, gambar_mobil;
-
+public class model_det_mobil {
 
     private String jumlah_kursi;
-    @Expose
-    @SerializedName("bahan_bakar")
     private String  Bahan_bakar;
     private String isi_silinder;
     private String plat;
     private String type;
     private String warna;
     private String thn_produksi;
+
+    public model_det_mobil(String jumlah_kursi, String bahan_bakar, String isi_silinder, String plat, String type, String warna, String thn_produksi) {
+        this.jumlah_kursi = jumlah_kursi;
+        Bahan_bakar = bahan_bakar;
+        this.isi_silinder = isi_silinder;
+        this.plat = plat;
+        this.type = type;
+        this.warna = warna;
+        this.thn_produksi = thn_produksi;
+    }
 
     public String getJumlah_kursi() {
         return jumlah_kursi;
@@ -75,38 +75,4 @@ public class GetMobil {
     public void setThn_produksi(String thn_produksi) {
         this.thn_produksi = thn_produksi;
     }
-
-    public int getId_mobil() {
-        return id_mobil;
-    }
-
-    public void setId_mobil(int id_mobil) {
-        this.id_mobil = id_mobil;
-    }
-
-    public int getId_detail_mobil() {
-        return id_detail_mobil;
-    }
-
-    public void setId_detail_mobil(int id_detail_mobil) {
-        this.id_detail_mobil = id_detail_mobil;
-    }
-
-    public String getMerk() {
-        return merk;
-    }
-
-    public void setMerk(String merk) {
-        this.merk = merk;
-    }
-
-    public String getGambar_mobil() {
-        return gambar_mobil;
-    }
-
-    public void setGambar_mobil(String gambar_mobil) {
-        this.gambar_mobil = gambar_mobil;
-    }
-
-
 }

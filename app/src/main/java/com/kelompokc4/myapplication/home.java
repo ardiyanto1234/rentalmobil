@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class home extends Fragment {
     private TextView btn;
-    Button btn4kursi;
+    Button btn4kursi,btn7kursi;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -35,7 +35,7 @@ public class home extends Fragment {
         btn4kursi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), detailmobilkursi4.class);
+                Intent intent = new Intent(getActivity(), daftarmobilkursi4.class);
                 startActivity(intent);
             }
         });

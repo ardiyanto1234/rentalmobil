@@ -1,7 +1,9 @@
 package com.kelompokc4.myapplication.koneksi;
 
+import com.kelompokc4.myapplication.response.Detailresponmobil;
 import com.kelompokc4.myapplication.response.EmailCheckResponse;
 import com.kelompokc4.myapplication.response.GetMobil;
+import com.kelompokc4.myapplication.response.GetMobileResponse;
 import com.kelompokc4.myapplication.response.ResponseBooking;
 import com.kelompokc4.myapplication.response.VerifyResponse;
 import com.kelompokc4.myapplication.response.getEmailRegis;
@@ -124,8 +126,18 @@ public interface RetrofitEndPoint {
             @Field("action") String action
     );
 
+
+    @GET("ambil_data_mobil.php")
+    Call<Detailresponmobil> ambildatamobil();
+
     @GET("getMobil.php")
-    Call<List<GetMobil>> getMobil();
+    Call<GetMobileResponse> getMobil();
+
+    @GET("getMobil4.php")
+    Call<GetMobileResponse> ambildatamobil4(
+
+    );
+
     @GET("getEmailRegis.php")
     Call<List<getEmailRegis>> getEmailRegis();
     @GET("checkEmail.php")

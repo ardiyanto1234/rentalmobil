@@ -84,6 +84,7 @@
             android:textStyle="bold"
           android:layout_marginTop="@dimen/_40sdp"
             android:layout_marginLeft="80dp"
+            android:id="@+id/kursi"
             />
         
         <ImageView
@@ -102,7 +103,8 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:layout_marginTop="@dimen/_40sdp"
-            android:layout_marginLeft="250dp"/>
+            android:layout_marginLeft="250dp"
+            android:id="@+id/silindir"/>
 
 
         <ImageView
@@ -129,6 +131,7 @@
             android:textStyle="bold"
             android:layout_marginTop="@dimen/_110sdp"
             android:layout_marginLeft="90dp"
+            android:id="@+id/bahan_bakar"
             />
 
         <ImageView
@@ -147,6 +150,7 @@
             android:textStyle="bold"
             android:layout_marginTop="@dimen/_110sdp"
             android:layout_marginLeft="240dp"
+            android:id="@+id/plat_mobil"
             />
 
         <ImageView
@@ -164,6 +168,7 @@
             android:textStyle="bold"
             android:layout_marginTop="@dimen/_170sdp"
             android:layout_marginLeft="90dp"
+            android:id="@+id/warna"
             />
 
         <ImageView
@@ -181,6 +186,7 @@
             android:textStyle="bold"
             android:layout_marginTop="@dimen/_170sdp"
             android:layout_marginLeft="250dp"
+            android:id="@+id/tahun_pembuatan"
             />
 
 

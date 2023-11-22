@@ -59,15 +59,13 @@ public class Ulasan extends Fragment {
             getResponse.enqueue(new Callback<UserResponse>() {
                 @Override
                 public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-
                     if (response.body().getStatus().equals("Berhasil")){
-//                        startActivity(new Intent(Ulasan.this,KonfirmasiUlasan.class));
+                        Intent intent = new Intent(getActivity(), Konfirmasi_ulasan.class);
                         Toast.makeText(getActivity(), "Ulasan Terkirim", Toast.LENGTH_SHORT).show();
                     }else if(response.body().getStatus().equals("Gagal")){
                         Toast.makeText(getActivity(), "Ulasan Gagal Dikirim", Toast.LENGTH_SHORT).show();
                     }
                 }
-
                 @Override
                 public void onFailure(Call<UserResponse> call, Throwable t) {
                     Toast.makeText(getActivity(), "Ulasan Gagal "+t.getMessage(), Toast.LENGTH_SHORT).show();
@@ -78,8 +76,4 @@ public class Ulasan extends Fragment {
 
         return view;
     }
-
-
-
-
 }
