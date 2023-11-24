@@ -72,12 +72,13 @@ public class daftarmobil extends AppCompatActivity {
 
         getDataMobil();
 
-        btn = findViewById(R.id.btnbck);
+        btn = findViewById(R.id.btnbckk);
         /*btnpesan = findViewById(R.id.btnpesan);*/
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                daftarmobil.super.onBackPressed();
+                startActivity(new Intent(daftarmobil.this, Dasboard.class));
+//                daftarmobil.super.onBackPressed();
             }
         });
 

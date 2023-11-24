@@ -31,15 +31,16 @@
         />
 
     <TextView
-    android:id="@+id/usernameBaru"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Sandi Baru"
-    app:layout_constraintTop_toTopOf="@+id/textSandiBaru"
-    android:layout_marginTop="@dimen/_80sdp"
-    app:layout_constraintStart_toStartOf="parent"
-    android:layout_marginLeft="@dimen/_50sdp"
-    tools:ignore="MissingConstraints"
+        android:id="@+id/usernameBaru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sandi Baru"
+        android:maxLines="1"
+        app:layout_constraintTop_toTopOf="@+id/textSandiBaru"
+        android:layout_marginTop="@dimen/_80sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="@dimen/_50sdp"
+        tools:ignore="MissingConstraints"
     />
 
     <EditText

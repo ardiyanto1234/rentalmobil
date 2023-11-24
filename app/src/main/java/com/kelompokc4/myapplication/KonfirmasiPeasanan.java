@@ -8,17 +8,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class KonfirmasiPeasanan extends AppCompatActivity {
 
     ImageButton btnback;
     Button btnselesai;
+    public static TextView hargaPesanan;
+    public static TextView DurasiJam;
+    public static TextView NamaPesanan;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_konfirmasi_peasanan);
+        hargaPesanan = findViewById(R.id.hargaPesanan);
+        hargaPesanan.setText(pesanan.HargaPesanan);
+        NamaPesanan = findViewById(R.id.NamaPesanan);
+        NamaPesanan.setText(pesanan.Username);
+        DurasiJam = findViewById(R.id.DurasiJam);
+        DurasiJam.setText(pesanan.JamPesan);
 
         btnback = findViewById(R.id.btnKembaliPesan);
         btnselesai = findViewById(R.id.btnSelesai);
@@ -43,6 +53,7 @@ public class KonfirmasiPeasanan extends AppCompatActivity {
         public void selesai() {
             Intent intent = new Intent(KonfirmasiPeasanan.this, daftarmobil.class);
             startActivity(intent);
+            finish();
 
     }
 }

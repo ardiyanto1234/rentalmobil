@@ -76,5 +76,6 @@ public class detailmobil extends AppCompatActivity {
         Intent intent = new Intent(detailmobil.this, pesanan.class);
         intent.putExtra("id_mobil", getIntent().getIntExtra("id_mobil", 1));
         startActivity(intent);
+        finish();
     }
 }

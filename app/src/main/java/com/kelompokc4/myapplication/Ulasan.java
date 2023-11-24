@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,8 @@ import com.kelompokc4.myapplication.response.ResponseBooking;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -54,24 +57,30 @@ public class Ulasan extends Fragment {
 
         buttonSubmit.setOnClickListener(view1 -> {
             String ulasan = editTextUlasan.getText().toString();
-            RetrofitEndPoint ardData = RetrofitClient.getConnection().create(RetrofitEndPoint.class);
-            Call<UserResponse> getResponse = ardData.ulasan(ulasan,Integer.parseInt(id_user));
-            getResponse.enqueue(new Callback<UserResponse>() {
-                @Override
-                public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                    if (response.body().getStatus().equals("Berhasil")){
-                        Intent intent = new Intent(getActivity(), Konfirmasi_ulasan.class);
-                        Toast.makeText(getActivity(), "Ulasan Terkirim", Toast.LENGTH_SHORT).show();
-                    }else if(response.body().getStatus().equals("Gagal")){
-                        Toast.makeText(getActivity(), "Ulasan Gagal Dikirim", Toast.LENGTH_SHORT).show();
+            if(TextUtils.isEmpty(editTextUlasan.getText().toString())) {
+                Toast.makeText(getContext(), "Isi terebih dahulu ulasan ", Toast.LENGTH_SHORT).show();
+            }else {
+                RetrofitEndPoint ardData = RetrofitClient.getConnection().create(RetrofitEndPoint.class);
+                Call<UserResponse> getResponse = ardData.ulasan(ulasan, Integer.parseInt(id_user));
+                getResponse.enqueue(new Callback<UserResponse>() {
+                    @Override
+                    public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                        if (response.body().getStatus().equals("Berhasil")) {
+                            Intent intent = new Intent(getActivity(), Konfirmasi_ulasan.class);
+                            startActivity(intent);
+                            Toast.makeText(getActivity(),  "Ulasan Terkirim", Toast.LENGTH_SHORT).show();
+                        } else if (response.body().getStatus().equals("Gagal")) {
+                            Toast.makeText(getActivity(), "Ulasan Gagal Dikirim", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                }
-                @Override
-                public void onFailure(Call<UserResponse> call, Throwable t) {
-                    Toast.makeText(getActivity(), "Ulasan Gagal "+t.getMessage(), Toast.LENGTH_SHORT).show();
 
-                }
-            });
+                    @Override
+                    public void onFailure(Call<UserResponse> call, Throwable t) {
+                        Toast.makeText(getActivity(), "Ulasan Gagal " + t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+            }
         });
 
         return view;

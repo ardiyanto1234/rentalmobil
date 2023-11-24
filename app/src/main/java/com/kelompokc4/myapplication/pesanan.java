@@ -18,6 +18,8 @@ import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -68,9 +70,11 @@ public class pesanan extends AppCompatActivity {
     private TextView uploadKtp, textViewButton2;
     private EditText editTextNama, editTextNotlphone, editTextAlamat, editTextTglLahir;
     private Button selectFileButton3;
-    private String JamPesan = "";
+    public static String JamPesan = "";
     private EditText editTextCalender;
     private Calendar myCalender;
+    public static String Username = "";
+    public static String HargaPesanan = "";
 
 
     @Override
@@ -91,6 +95,25 @@ public class pesanan extends AppCompatActivity {
         selectFileButton3 = findViewById(R.id.selectFileButton3);
         textViewButton2 = findViewById(R.id.textViewButton2);
         editTextCalender = findViewById(R.id.editTextTglLahir);
+        setEditTextFilter(editTextTglLahir);
+
+        InputFilter HanyaAngka = new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end,
+                                       Spanned dest, int dstart, int dend) {
+                // Loop melalui karakter yang diinputkan
+                for (int i = start; i < end; i++) {
+                    char character = source.charAt(i);
+                    if (!Character.isDigit(character)) {
+                        // Karakter bukan angka, jadi kita tidak mengizinkan
+                        return "";
+                    }
+                }
+                // Semua karakter adalah angka, izinkan input
+                return null;
+            }
+        };
+        editTextNotlphone.setFilters(new InputFilter[]{HanyaAngka});
 
 
         //inisialisasi objel calender
@@ -105,18 +128,21 @@ public class pesanan extends AppCompatActivity {
         });
         jam12.setOnClickListener(v -> {
             JamPesan = "12 Jam";
+            HargaPesanan = "Rp.150.000";
             isJam24Hidden = hideButton(jam24, isJam24Hidden);
             isHari2Hidden = hideButton(hari2, isHari2Hidden);
         });
 
         jam24.setOnClickListener(v -> {
             JamPesan = "24 Jam";
+            HargaPesanan = "Rp.500.000";
             isJam12Hidden = hideButton(jam12, isJam12Hidden);
             isHari2Hidden = hideButton(hari2, isHari2Hidden);
         });
 
         hari2.setOnClickListener(v -> {
             JamPesan = "2 Hari";
+            HargaPesanan = "Rp.800.000";
             isJam12Hidden = hideButton(jam12, isJam12Hidden);
             isJam24Hidden = hideButton(jam24, isJam24Hidden);
         });
@@ -133,24 +159,18 @@ public class pesanan extends AppCompatActivity {
                     editTextNama.setError("Nama belum diisi");
                     editTextAlamat.setError("Alamat belum diisi");
                     editTextNotlphone.setError("Nomor hp belum diisi");
-                    editTextTglLahir.setError("Nomor telepon belum diisi");
+                    ;
                     textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
                     editTextNama.startAnimation(shake);
                 } else if (TextUtils.isEmpty(editTextAlamat.getText())) {
                     editTextAlamat.setError("Alamat belum diisi");
                     editTextNotlphone.setError("Nomor hp belum diisi");
-                    editTextTglLahir.setError("Tanggal Lahir belum diisi");
                     textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
                     editTextAlamat.startAnimation(shake);
                 } else if (TextUtils.isEmpty(editTextNotlphone.getText())) {
                     editTextNotlphone.setError("Nomor hp belum diisi");
-                    editTextTglLahir.setError("Tanggal Lahir belum diisi");
                     textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
                     editTextNotlphone.startAnimation(shake);
-                } else if (TextUtils.isEmpty(editTextTglLahir.getText())) {
-                    editTextTglLahir.setError("Nomor telepon belum diisi");
-                    textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
-                    editTextTglLahir.startAnimation(shake);
                 } else if (TextUtils.isEmpty(selectFileButton3.getText())) {
                     textViewButton2.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_error, 0);
                     textViewButton2.setHintTextColor(getResources().getColor(R.color.erorText));
@@ -167,7 +187,9 @@ public class pesanan extends AppCompatActivity {
                     builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            Username = editTextNama.getText().toString().trim();
                             sendDataToServer();
+                            finish();
                         }
                     });
                     builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
@@ -181,15 +203,18 @@ public class pesanan extends AppCompatActivity {
             }
         });
     }
+
     private void showDataPickerDialog() {
         new DatePickerDialog(this, dateSetListener, myCalender.get(Calendar.YEAR), myCalender.get(Calendar.MONTH), myCalender.get(Calendar.DAY_OF_MONTH)).show();
     }
+
     private void updateLabel() {
         // Mengupdate tanggal pada EditText
-        String myFormat = "yyyy/MM/d";
+        String myFormat = "yyyy-MM-dd";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.getDefault());
         editTextTglLahir.setText(sdf.format(myCalender.getTime()));
     }
+
     // Listener untuk menangkap perubahan tanggal pada DatePickerDialog
     private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -200,13 +225,24 @@ public class pesanan extends AppCompatActivity {
             updateLabel();
         }
     };
+    private void setEditTextFilter(EditText editText) {
+        InputFilter filter = new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                // Remove double quotes from the input
+                return source.toString().replace("\"", "");
+            }
+        };
+
+        editText.setFilters(new InputFilter[]{filter});
+    }
 
     private void sendDataToServer() {
         Intent intent = getIntent();
         // Get id_user dari SharedPreferences
-        SharedPreferences sharedPreferencesSeniman = pesanan.this.getSharedPreferences("prefLogin",MODE_PRIVATE);
-        String id_user = sharedPreferencesSeniman.getString("id_user","");
-        Toast.makeText(this, "id "+id_user, Toast.LENGTH_SHORT).show();
+        SharedPreferences sharedPreferencesSeniman = pesanan.this.getSharedPreferences("prefLogin", MODE_PRIVATE);
+        String id_user = sharedPreferencesSeniman.getString("id_user", "");
+        Toast.makeText(this, "id " + id_user, Toast.LENGTH_SHORT).show();
         // Persiapkan berkas gambar KTP Seniman, dokumen Surat Keterangan, dan gambar Pass Foto
 
         File ktpSenimanFile = new File(textViewButton2.getText().toString());
@@ -225,7 +261,6 @@ public class pesanan extends AppCompatActivity {
         Toast.makeText(this, "ID MOBILE : " + idMobil, Toast.LENGTH_SHORT).show();
 
 
-
         // Mengirim data dan berkas ke server
         RetrofitEndPoint ardData = RetrofitClient.getConnection().create(RetrofitEndPoint.class);
         Call<ResponseBooking> getResponse = ardData.PesanMobil(Nama, no_hp, alamat, tanggal, this.JamPesan, fotoktp, Integer.parseInt(id_user), idMobil);
@@ -238,7 +273,7 @@ public class pesanan extends AppCompatActivity {
                 Gson gson = new Gson();
                 System.out.println("REsponse data " + gson.toJson(response.body()) + "Response data" + response.body() + "res" + response.errorBody());
 
-                Toast.makeText(pesanan.this, "id : "+id_user, Toast.LENGTH_SHORT).show();
+                Toast.makeText(pesanan.this, "id : " + id_user, Toast.LENGTH_SHORT).show();
                 if (response.body() != null && "success".equals(response.body().getStatus())) {
                     startActivity(new Intent(pesanan.this, KonfirmasiPeasanan.class));
                 }
@@ -250,6 +285,7 @@ public class pesanan extends AppCompatActivity {
             }
         });
     }
+
     public void selectImageFile(View view) {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -271,6 +307,7 @@ public class pesanan extends AppCompatActivity {
             // Handle jika tidak ada aplikasi yang dapat memilih foto
         }
     }
+
     private void selectFile(String mimeType, int buttonId) {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType(mimeType);
@@ -285,6 +322,7 @@ public class pesanan extends AppCompatActivity {
             // Handle jika tidak ada aplikasi yang dapat memilih file
         }
     }
+
     @SuppressLint("Range")
     private String getFileName(Uri uri) {
         String result = null;
@@ -307,6 +345,7 @@ public class pesanan extends AppCompatActivity {
         }
         return result;
     }
+
     public static String getFilePathFromUri(Context context, Uri uri) {
         String filePath = null;
         if (uri.getScheme() != null && uri.getScheme().equals("content")) {
@@ -323,6 +362,7 @@ public class pesanan extends AppCompatActivity {
         }
         return filePath;
     }
+
     public static String getFileExtension(Context context, Uri uri) {
         ContentResolver contentResolver = context.getContentResolver();
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
@@ -333,7 +373,9 @@ public class pesanan extends AppCompatActivity {
         }
         return extension;
     }
+
     byte[] pathKtp;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -343,11 +385,12 @@ public class pesanan extends AppCompatActivity {
 
             if (requestCode == R.id.selectFileButton3) {
                 uploadKtp.setText(selectedFileName);
-                pathKtp = uriToByteArray(this,data.getData());
+                pathKtp = uriToByteArray(this, data.getData());
             } else
                 Toast.makeText(getApplicationContext(), "Your message here", Toast.LENGTH_SHORT).show();
         }
     }
+
     public byte[] uriToByteArray(Context context, Uri uri) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         try {
@@ -371,30 +414,21 @@ public class pesanan extends AppCompatActivity {
         }
 
     }
-            public void kembali () {
-                Intent intent = new Intent(pesanan.this, detailmobil.class);
-                startActivity(intent);
-            }
-            private boolean hideButton (Button button,boolean isHidden){
-                if (isHidden) {
-                    button.setEnabled(true);
-                    button.setVisibility(View.VISIBLE);
-                } else {
-                    button.setEnabled(false);
-                    button.setVisibility(View.INVISIBLE);
-                }
-                return !isHidden;
-            }
+
+    public void kembali() {
+        Intent intent = new Intent(pesanan.this, detailmobil.class);
+        startActivity(intent);
+    }
+
+    private boolean hideButton(Button button, boolean isHidden) {
+        if (isHidden) {
+            button.setEnabled(true);
+            button.setVisibility(View.VISIBLE);
+        } else {
+            button.setEnabled(false);
+            button.setVisibility(View.INVISIBLE);
         }
+        return !isHidden;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
+}

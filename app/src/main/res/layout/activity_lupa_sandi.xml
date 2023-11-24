@@ -71,6 +71,7 @@
         android:layout_width="300dp"
         android:layout_height="36dp"
         android:hint="Email"
+        android:maxLines="1"
         android:paddingLeft="20dp"
         android:textColor="@color/black"
         android:background="@drawable/backgroundtext"

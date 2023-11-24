@@ -60,15 +60,18 @@
             android:id="@+id/namaLengkap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_200sdp"
-            android:text="nama"
+            android:text="Nama"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
 
         <EditText
+            android:hint="Masukkan Namamu"
+            android:maxLines="1"
             android:id="@+id/editTextNama"
+            android:textSize="@dimen/_13ssp"
             android:layout_width="@dimen/_130sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginLeft="@dimen/_10sdp"
@@ -88,7 +91,7 @@
             android:id="@+id/Alamat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_165sdp"
+            android:layout_marginLeft="@dimen/_160sdp"
             android:layout_marginTop="@dimen/_200sdp"
             android:text="Alamat"
             android:textSize="@dimen/_13sdp"
@@ -96,6 +99,9 @@
             app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
 
         <EditText
+            android:hint="Masukkan Alamatmu"
+            android:textSize="@dimen/_12ssp"
+            android:maxLines="1"
             android:id="@+id/editTextAlamat"
             android:layout_width="@dimen/_130sdp"
             android:layout_height="@dimen/_40sdp"
@@ -118,17 +124,20 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_270sdp"
-            android:text="No telphone"
+            android:text="No Telepon"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
 
         <EditText
+            android:hint="Masukan Teleponmu"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:maxLines="1"
             android:id="@+id/editTextNotlphone"
             android:layout_width="@dimen/_130sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_13sdp"
             android:background="@color/white"
             android:paddingLeft="@dimen/_10sdp"
             app:boxBackgroundColor="@color/white"
@@ -143,7 +152,7 @@
             android:id="@+id/tagllahir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_165sdp"
+            android:layout_marginLeft="@dimen/_160sdp"
             android:layout_marginTop="@dimen/_270sdp"
             android:text="Tanggal pemesanan"
             app:layout_goneMarginLeft="30dp"
@@ -153,28 +162,28 @@
             app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
 
         <EditText
+
+            android:layout_marginTop="@dimen/_5sdp"
             android:id="@+id/editTextTglLahir"
             android:layout_width="@dimen/_130sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_centerVertical="true"
-            android:layout_margin="16dp"
-            android:paddingLeft="@dimen/_10sdp"
-            app:layout_goneMarginLeft="30dp"
-            android:layout_marginLeft="@dimen/_160sdp"
+            android:layout_marginEnd="18dp"
             android:background="@color/white"
             android:focusable="false"
             android:hint="Select Date"
             android:inputType="none"
+            android:maxLines="@integer/material_motion_duration_long_1"
+            android:paddingLeft="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tagllahir"
 
-            />
+            app:layout_constraintTop_toBottomOf="@+id/tagllahir" />
 
         <TextView
             android:id="@+id/UploadKtp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_350sdp"
             android:text="Upload Ktp"
             android:textSize="@dimen/_13sdp"
@@ -218,6 +227,8 @@
         </LinearLayout>
 
         <TextView
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:id="@+id/textAturJadwal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -246,7 +257,7 @@
             android:id="@+id/jam24"
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_50sdp"
-            android:layout_marginLeft="@dimen/_110sdp"
+            android:layout_marginLeft="@dimen/_115sdp"
             android:backgroundTint="@color/black"
             android:text="24 jam"
             android:textColor="@color/kuning2"

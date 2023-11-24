@@ -12,7 +12,7 @@
         android:icon="@drawable/histoty"/>
     <item
         android:id="@+id/Ulasan"
-        android:title="Ulasam"
+        android:title="Ulasan"
         android:icon="@drawable/message"/>
     <item
         android:id="@+id/Profil"

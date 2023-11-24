@@ -23,7 +23,7 @@
         android:id="@+id/keteranganMobil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Catatan Peasanan"
+        android:text="Catatan Pesanan"
         android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnKembaliPesan"
@@ -69,7 +69,6 @@
         android:textSize="@dimen/_15sdp"/>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/DurasiJam"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_50sdp"
         android:background="@color/white"
@@ -100,9 +99,9 @@
             />
 
         <TextView
+            android:id="@+id/DurasiJam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="12 Jam"
             android:textStyle="bold"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginLeft="@dimen/_50sdp"
@@ -141,9 +140,9 @@
             />
 
         <TextView
+            android:id="@+id/hargaPesanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="150.000"
             android:textStyle="bold"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginLeft="@dimen/_50sdp"
@@ -187,6 +186,7 @@
             />
 
         <TextView
+            android:id="@+id/NamaPesanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rifaul123"

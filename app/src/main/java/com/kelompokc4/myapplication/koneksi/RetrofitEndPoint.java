@@ -151,6 +151,11 @@ public interface RetrofitEndPoint {
             @Field("email") String email,
             @Field("alamat") String alamat
     );
+@FormUrlEncoded
+    @POST("histori.php")
+    Call<ResponHistori> histori(
+            @Field("id_user") String iduser
+    );
 
 
 }

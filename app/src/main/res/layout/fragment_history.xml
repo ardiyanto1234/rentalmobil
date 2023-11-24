@@ -21,4 +21,14 @@
             android:layout_gravity="center_horizontal"/>
 
     </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_mobil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_45sdp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        tools:listitem="@layout/item_history">
+    </androidx.recyclerview.widget.RecyclerView>
 </FrameLayout>
