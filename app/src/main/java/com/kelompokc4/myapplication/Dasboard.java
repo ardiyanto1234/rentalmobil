@@ -34,6 +34,8 @@ public class Dasboard extends AppCompatActivity {
                 selectedFragment = new Ulasan();
             }else if (item.getItemId() == R.id.Profil){
                 selectedFragment = new Profil();
+            }else if (item.getItemId() == R.id.Status){
+                selectedFragment = new Profil();
             }
 
             if(selectedFragment != null){

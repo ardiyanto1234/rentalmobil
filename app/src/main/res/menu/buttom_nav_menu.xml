@@ -18,5 +18,9 @@
         android:id="@+id/Profil"
         android:title="profil"
         android:icon="@drawable/profil"/>
+    <item
+        android:id="@+id/Status"
+        android:title="Status"
+        android:icon="@drawable/catatan"/>
 
 </menu>

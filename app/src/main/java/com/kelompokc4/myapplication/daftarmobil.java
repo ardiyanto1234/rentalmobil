@@ -32,7 +32,7 @@ public class daftarmobil extends AppCompatActivity {
 
     ImageView btn;
     private Button btnpesan;
-
+    private String urlmobil;
     RecyclerView rc_mobil;
 
     private void getDataMobil() {
@@ -47,7 +47,7 @@ public class daftarmobil extends AppCompatActivity {
                     adapter_daftar_mobil adaptermobil = new adapter_daftar_mobil(daftarmobil.this, datamobil);
                     rc_mobil.setAdapter(adaptermobil);
                     Toast.makeText(daftarmobil.this, "size -> " + datamobil.get(0).getId_mobil(), Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     Toast.makeText(daftarmobil.this, "ON FAILURE", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -60,14 +60,10 @@ public class daftarmobil extends AppCompatActivity {
         });
     }
 
-
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftarmobil);
-
-
 
 
         getDataMobil();
@@ -82,53 +78,6 @@ public class daftarmobil extends AppCompatActivity {
             }
         });
 
-
-       /* btnpesan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                fetchDataFromServer();
-            }
-        });
-    }*/
-   /* private void fetchDataFromServer() {
-        RetrofitEndPoint apiService = RetrofitClient.getInstance();
-
-        Call<List<GetMobil>> call = apiService.getMobil();
-        call.enqueue(new Callback<List<GetMobil>>() {
-            @Override
-            public void onResponse(Call<List<GetMobil>> call, Response<List<GetMobil>> response) {
-                if (response.isSuccessful()) {
-                    List<GetMobil> mobilList = response.body();
-
-                    // Ambil id_mobil pertama dari list
-                    int firstMobilId = mobilList.get(0).getId_mobil();
-
-                    // Kirim id_mobil ke aktivitas selanjutnya
-                    sendToDetailActivity(firstMobilId);
-                } else {
-                    Toast.makeText(daftarmobil.this, "Gagal mengambil data", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<GetMobil>> call, Throwable t) {
-                // Handle kesalahan di sini
-                Toast.makeText(daftarmobil.this, "Gagal mengambil data", Toast.LENGTH_SHORT).show();
-                Log.e("Error", "Retrofit Error: " + t.getMessage());
-            }
-        });
-    }*/
-
-    /*private void sendToDetailActivity(int idMobil) {
-        Intent intent = new Intent(daftarmobil.this, detailmobil.class);
-
-        // Kirim id_mobil ke aktivitas selanjutnya melalui Intent
-        intent.putExtra("idMobil", idMobil);
-
-        startActivity(intent);
-        Toast.makeText(daftarmobil.this, "ID Mobil: " + idMobil, Toast.LENGTH_SHORT).show();
-    }*/
 
     }
 }
