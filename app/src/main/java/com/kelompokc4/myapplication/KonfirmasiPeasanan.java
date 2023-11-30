@@ -51,7 +51,7 @@ public class KonfirmasiPeasanan extends AppCompatActivity {
         startActivity(intent);
     }
         public void selesai() {
-            Intent intent = new Intent(KonfirmasiPeasanan.this, daftarmobil.class);
+            Intent intent = new Intent(KonfirmasiPeasanan.this,Dasboard.class);
             startActivity(intent);
             finish();
 

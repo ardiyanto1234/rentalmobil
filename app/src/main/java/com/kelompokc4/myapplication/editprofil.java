@@ -49,8 +49,12 @@ public class editprofil extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                String ambilusername = editTextUsername.getText().toString();
+                String ambilemail = editTextEmail.getText().toString();
+                String ambilalamat = editTextAlamat.getText().toString();
+
                 RetrofitEndPoint endPoint = RetrofitClient.getConnection().create(RetrofitEndPoint.class);
-                Call<UserResponse> call = endPoint.editprofil(id_user, username,email,alamat);
+                Call<UserResponse> call = endPoint.editprofil(id_user, ambilusername,ambilemail,ambilalamat);
 
                 call.enqueue(new Callback<UserResponse>() {
                     @Override

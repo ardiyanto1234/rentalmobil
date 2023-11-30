@@ -29,7 +29,7 @@
                 android:layout_width="@dimen/_99sdp"
                 android:layout_height="@dimen/_99sdp"
                 android:layout_gravity="center"
-                android:src="@drawable/profil"
+                android:src="@drawable/logo2"
                 tools:ignore="MissingClass" />
 
         </com.google.android.material.card.MaterialCardView>

@@ -5,6 +5,7 @@ import com.kelompokc4.myapplication.response.EmailCheckResponse;
 import com.kelompokc4.myapplication.response.GetMobil;
 import com.kelompokc4.myapplication.response.GetMobileResponse;
 import com.kelompokc4.myapplication.response.ResponseBooking;
+import com.kelompokc4.myapplication.response.ResponseTiimer;
 import com.kelompokc4.myapplication.response.VerifyResponse;
 import com.kelompokc4.myapplication.response.getEmailRegis;
 
@@ -38,8 +39,8 @@ public interface RetrofitEndPoint {
              @Part("tanggal") String tanggal,
              @Part("jam") String jam,
              @Part MultipartBody.Part foto_ktp,
-             @Part("id_user") int id_user,
-             @Part("id_mobil") int id_mobil
+             @Part("id_user") String id_user,
+             @Part("id_mobil") String id_mobil
     );
 
 
@@ -155,6 +156,11 @@ public interface RetrofitEndPoint {
     @POST("histori.php")
     Call<ResponHistori> histori(
             @Field("id_user") String iduser
+    );
+@FormUrlEncoded
+    @POST("startTimer.php")
+    Call<ResponseTiimer> startTimer(
+            @Field("id_mobil") String id_mobil
     );
 
 

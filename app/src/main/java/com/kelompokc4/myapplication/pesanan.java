@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -42,6 +43,7 @@ import com.google.gson.Gson;
 import com.kelompokc4.myapplication.koneksi.RetrofitClient;
 import com.kelompokc4.myapplication.koneksi.RetrofitEndPoint;
 import com.kelompokc4.myapplication.response.ResponseBooking;
+import com.kelompokc4.myapplication.response.ResponseTiimer;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -127,21 +129,21 @@ public class pesanan extends AppCompatActivity {
             }
         });
         jam12.setOnClickListener(v -> {
-            JamPesan = "12 Jam";
+            JamPesan = "12jam";
             HargaPesanan = "Rp.150.000";
             isJam24Hidden = hideButton(jam24, isJam24Hidden);
             isHari2Hidden = hideButton(hari2, isHari2Hidden);
         });
 
         jam24.setOnClickListener(v -> {
-            JamPesan = "24 Jam";
+            JamPesan = "24jam";
             HargaPesanan = "Rp.500.000";
             isJam12Hidden = hideButton(jam12, isJam12Hidden);
             isHari2Hidden = hideButton(hari2, isHari2Hidden);
         });
 
         hari2.setOnClickListener(v -> {
-            JamPesan = "2 Hari";
+            JamPesan = "2hari";
             HargaPesanan = "Rp.800.000";
             isJam12Hidden = hideButton(jam12, isJam12Hidden);
             isJam24Hidden = hideButton(jam24, isJam24Hidden);
@@ -189,7 +191,6 @@ public class pesanan extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             Username = editTextNama.getText().toString().trim();
                             sendDataToServer();
-                            finish();
                         }
                     });
                     builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
@@ -225,6 +226,7 @@ public class pesanan extends AppCompatActivity {
             updateLabel();
         }
     };
+
     private void setEditTextFilter(EditText editText) {
         InputFilter filter = new InputFilter() {
             @Override
@@ -244,9 +246,7 @@ public class pesanan extends AppCompatActivity {
         String id_user = sharedPreferencesSeniman.getString("id_user", "");
         Toast.makeText(this, "id " + id_user, Toast.LENGTH_SHORT).show();
         // Persiapkan berkas gambar KTP Seniman, dokumen Surat Keterangan, dan gambar Pass Foto
-
         File ktpSenimanFile = new File(textViewButton2.getText().toString());
-
 
         // Buat RequestBody untuk berkas-berkas tersebut
 
@@ -260,10 +260,9 @@ public class pesanan extends AppCompatActivity {
         int idMobil = getIntent().getIntExtra("id_mobil", -1);
         Toast.makeText(this, "ID MOBILE : " + idMobil, Toast.LENGTH_SHORT).show();
 
-
         // Mengirim data dan berkas ke server
         RetrofitEndPoint ardData = RetrofitClient.getConnection().create(RetrofitEndPoint.class);
-        Call<ResponseBooking> getResponse = ardData.PesanMobil(Nama, no_hp, alamat, tanggal, this.JamPesan, fotoktp, Integer.parseInt(id_user), idMobil);
+        Call<ResponseBooking> getResponse = ardData.PesanMobil(Nama, no_hp, alamat, tanggal, this.JamPesan.toString(), fotoktp, id_user, String.valueOf(idMobil).toString().trim());
 
         getResponse.enqueue(new Callback<ResponseBooking>() {
             @Override
@@ -272,18 +271,74 @@ public class pesanan extends AppCompatActivity {
                 System.out.println("REsponse data " + response.body().getStatus() + "Response data" + response.body() + "res" + response.errorBody());
                 Gson gson = new Gson();
                 System.out.println("REsponse data " + gson.toJson(response.body()) + "Response data" + response.body() + "res" + response.errorBody());
-
                 Toast.makeText(pesanan.this, "id : " + id_user, Toast.LENGTH_SHORT).show();
-                if (response.body() != null && "success".equals(response.body().getStatus())) {
+                System.out.println("ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR" + response.body().getMessage());
+                Log.e("ERRRORRRRRRRRRRRRRR",response.body().getMessage());
+                Log.e("ERRRORRRRRRRRRRRRRR",response.body().getStatus());
+                if ("success".equals(response.body().getStatus())) {
+                    // Respons sukses, memulai timer
+                    startTimer(idMobil, getDurationInMillis(JamPesan));
+                    Toast.makeText(pesanan.this, "timer mulai", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(pesanan.this, KonfirmasiPeasanan.class));
+                    finish();
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBooking> call, Throwable t) {
-                // Handle error
+                t.printStackTrace();
+                Log.e("ERRRORRR",t.getMessage());
             }
         });
+    }
+
+    private void startTimer(final int idMobil, long durationMillis) {
+        new CountDownTimer(durationMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                // Timer masih berjalan (onTick akan dipanggil setiap detik)
+            }
+
+            @Override
+            public void onFinish() {
+                // Timer selesai, jalankan eksekusi PHP startTimer
+                executeStartTimer(idMobil);
+            }
+        }.start();
+    }
+
+    private void executeStartTimer(int idMobil) {
+        RetrofitEndPoint ardData = RetrofitClient.getConnection().create(RetrofitEndPoint.class);
+        Call<ResponseTiimer> startTimerCall = ardData.startTimer(String.valueOf(idMobil));
+
+        startTimerCall.enqueue(new Callback<ResponseTiimer>() {
+            @Override
+            public void onResponse(Call<ResponseTiimer> call, Response<ResponseTiimer> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(pesanan.this, "Mobil telah tersedia lagi", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Gagal menjalankan startTimer, handle kesalahan (opsional)
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseTiimer> call, Throwable t) {
+              t.printStackTrace();  // Handle error setelah menjalankan PHP startTimer
+            }
+        });
+    }
+
+    private long getDurationInMillis(String durationType) {
+        switch (durationType) {
+            case "12jam":
+                return 12 * 60 * 60 * 1000; // 12 jam dalam milidetik
+            case "24jam":
+                return 24 * 60 * 60 * 1000; // 24 jam dalam milidetik
+            case "2hari":
+                return 2 * 24 * 60 * 60 * 1000; // 2 hari dalam milidetik
+            default:
+                return 0;
+        }
     }
 
     public void selectImageFile(View view) {

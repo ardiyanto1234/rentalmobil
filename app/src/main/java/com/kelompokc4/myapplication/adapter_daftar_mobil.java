@@ -73,6 +73,7 @@ public class adapter_daftar_mobil extends RecyclerView.Adapter<adapter_daftar_mo
             @Override
             public void onClick(View v) {
                 //data yang di klik
+                int id = list.getId_mobil();
                 String type = list.getType();
                 String kursi = list.getJumlah_kursi();
                 String bahan_bakar = list.getBahan_bakar();
@@ -83,6 +84,7 @@ public class adapter_daftar_mobil extends RecyclerView.Adapter<adapter_daftar_mo
                 String gambar_mobil = list.getGambar_mobil();
 
                 Intent intent = new Intent(v.getContext(), detailmobil.class);
+                intent.putExtra("id_mobil", id);
                 intent.putExtra("type", type);
                 intent.putExtra("kursi", kursi);
                 intent.putExtra("bahan_bakar", bahan_bakar);

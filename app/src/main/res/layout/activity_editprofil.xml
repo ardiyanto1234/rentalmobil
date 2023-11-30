@@ -13,17 +13,19 @@
         android:layout_height="@dimen/_40sdp"
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
             android:text="EDIT PROFIL"
             android:textColor="@color/kuning2"
-            android:textStyle="bold"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_gravity="center_horizontal"/>
+            android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
 
@@ -32,7 +34,8 @@
         android:layout_width="@dimen/_99sdp"
         android:layout_height="@dimen/_99sdp"
         android:layout_gravity="center"
-        android:src="@drawable/profil"
+        android:src="@drawable/logo2"
+        android:layout_marginTop="@dimen/_20sdp"
         tools:ignore="MissingClass,MissingConstraints"
         app:layout_constraintTop_toBottomOf="@id/cardviewhitam"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +45,7 @@
         android:id="@+id/textEditProfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit Profil"
+
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,6 +142,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
-    
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

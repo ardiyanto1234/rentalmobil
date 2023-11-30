@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            android:text="Innova Reborn"
+            android:text="Lakukan Pemesanan"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,39 +36,40 @@
 
         <ImageView
             android:id="@+id/gambarPesanan"
-            android:layout_width="@dimen/_250sdp"
+            android:layout_width="@dimen/_160sdp"
             android:layout_height="@dimen/_150sdp"
-            android:layout_marginTop="@dimen/_50sdp"
-            android:background="@drawable/innovabg"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/logo2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btnKembaliDetail" />
+            app:layout_constraintTop_toTopOf="@+id/keteranganMobil"
+            />
 
         <TextView
             android:id="@+id/inputIdentitas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_190sdp"
             android:text="Masukan Identitas"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
+            app:layout_constraintTop_toTopOf="@+id/keteranganMobil" />
 
         <TextView
             android:id="@+id/namaLengkap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_200sdp"
+            android:layout_marginTop="@dimen/_220sdp"
             android:text="Nama"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
+            app:layout_constraintTop_toTopOf="@+id/keteranganMobil" />
 
         <EditText
-            android:hint="Masukkan Namamu"
+            android:hint="Nama Lengkap"
             android:maxLines="1"
             android:id="@+id/editTextNama"
             android:textSize="@dimen/_13ssp"
@@ -92,14 +93,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_160sdp"
-            android:layout_marginTop="@dimen/_200sdp"
+            android:layout_marginTop="@dimen/_220sdp"
             android:text="Alamat"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
+            app:layout_constraintTop_toTopOf="@+id/keteranganMobil" />
 
         <EditText
-            android:hint="Masukkan Alamatmu"
+            android:hint="Alamat"
             android:textSize="@dimen/_12ssp"
             android:maxLines="1"
             android:id="@+id/editTextAlamat"
@@ -115,7 +116,7 @@
             app:boxCornerRadiusTopEnd="@dimen/_10sdp"
             app:boxCornerRadiusTopStart="@dimen/_10sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/namaLengkap" />
+            app:layout_constraintTop_toTopOf="@+id/Alamat" />
 
 
         <TextView
@@ -123,16 +124,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_270sdp"
+            android:layout_marginTop="@dimen/_285sdp"
             android:text="No Telepon"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
+            app:layout_constraintTop_toTopOf="@+id/keteranganMobil" />
 
         <EditText
-            android:hint="Masukan Teleponmu"
+            android:hint="No.Telepon"
             android:textSize="@dimen/_12ssp"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:maxLines="1"
             android:id="@+id/editTextNotlphone"
             android:layout_width="@dimen/_130sdp"
@@ -153,17 +154,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_160sdp"
-            android:layout_marginTop="@dimen/_270sdp"
+            android:layout_marginTop="@dimen/_285sdp"
             android:text="Tanggal pemesanan"
             app:layout_goneMarginLeft="30dp"
-
             android:textSize="@dimen/_13sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
+            app:layout_constraintTop_toTopOf="@+id/keteranganMobil" />
 
         <EditText
 
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:id="@+id/editTextTglLahir"
             android:layout_width="@dimen/_130sdp"
             android:layout_height="@dimen/_40sdp"
@@ -176,7 +176,6 @@
             android:maxLines="@integer/material_motion_duration_long_1"
             android:paddingLeft="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
-
             app:layout_constraintTop_toBottomOf="@+id/tagllahir" />
 
         <TextView
@@ -184,14 +183,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_350sdp"
+            android:layout_marginTop="@dimen/_370sdp"
             android:text="Upload Ktp"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/gambarPesanan" />
+            app:layout_constraintTop_toTopOf="@+id/keteranganMobil" />
 
         <LinearLayout
-            android:layout_width="@dimen/_300sdp"
+            android:layout_width="@dimen/_280sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_40sdp"
             android:background="@color/white"
@@ -223,7 +222,7 @@
                 android:layout_marginStart="@dimen/_8sdp"
                 android:hint="Gambar berformat PNG, JPG, SVG"
                 android:textSize="@dimen/_13ssp" />
-             
+
         </LinearLayout>
 
         <TextView
@@ -233,7 +232,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_160sdp"
             android:text="Atur Jadwal"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -285,7 +284,7 @@
             android:id="@+id/btnSelesai"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="150dp"
             android:backgroundTint="@color/black"
             android:text="PESAN"
             android:textColor="@color/kuning2"
