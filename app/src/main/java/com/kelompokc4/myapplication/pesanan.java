@@ -78,7 +78,6 @@ public class pesanan extends AppCompatActivity {
     public static String Username = "";
     public static String HargaPesanan = "";
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,7 +115,6 @@ public class pesanan extends AppCompatActivity {
             }
         };
         editTextNotlphone.setFilters(new InputFilter[]{HanyaAngka});
-
 
         //inisialisasi objel calender
         myCalender = Calendar.getInstance();
@@ -161,7 +159,6 @@ public class pesanan extends AppCompatActivity {
                     editTextNama.setError("Nama belum diisi");
                     editTextAlamat.setError("Alamat belum diisi");
                     editTextNotlphone.setError("Nomor hp belum diisi");
-                    ;
                     textViewButton2.setHint("Foto KTP Belum Di Pilih                        ");
                     editTextNama.startAnimation(shake);
                 } else if (TextUtils.isEmpty(editTextAlamat.getText())) {
@@ -265,24 +262,27 @@ public class pesanan extends AppCompatActivity {
         Call<ResponseBooking> getResponse = ardData.PesanMobil(Nama, no_hp, alamat, tanggal, this.JamPesan.toString(), fotoktp, id_user, String.valueOf(idMobil).toString().trim());
 
         getResponse.enqueue(new Callback<ResponseBooking>() {
+            private Object respon;
+
             @Override
             public void onResponse(Call<ResponseBooking> call, Response<ResponseBooking> response) {
-                System.out.println("REsponse data " + response.message() + "Response data" + response.body() + "res" + response.errorBody());
-                System.out.println("REsponse data " + response.body().getStatus() + "Response data" + response.body() + "res" + response.errorBody());
-                Gson gson = new Gson();
-                System.out.println("REsponse data " + gson.toJson(response.body()) + "Response data" + response.body() + "res" + response.errorBody());
-                Toast.makeText(pesanan.this, "id : " + id_user, Toast.LENGTH_SHORT).show();
-                System.out.println("ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR" + response.body().getMessage());
-                Log.e("ERRRORRRRRRRRRRRRRR",response.body().getMessage());
-                Log.e("ERRRORRRRRRRRRRRRRR",response.body().getStatus());
-                if ("success".equals(response.body().getStatus())) {
-                    // Respons sukses, memulai timer
-                    startTimer(idMobil, getDurationInMillis(JamPesan));
-                    Toast.makeText(pesanan.this, "timer mulai", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(pesanan.this, KonfirmasiPeasanan.class));
-                    finish();
+                if (response.isSuccessful() && respon != null) {
+                    if ("success".equals(response.body().getStatus())) {
+                        // Respons sukses, memulai timer
+                        startTimer(idMobil, getDurationInMillis(JamPesan));
+                        Toast.makeText(pesanan.this, "timer mulai", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(pesanan.this, KonfirmasiPeasanan.class));
+                        finish();
+                    } else {
+                        // Handle other response statuses if needed
+                        Toast.makeText(pesanan.this, "Response status: " + response.body().getStatus(), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Handle unsuccessful response
+                    Toast.makeText(pesanan.this, "Response not successful or body is null", Toast.LENGTH_SHORT).show();
                 }
             }
+
 
             @Override
             public void onFailure(Call<ResponseBooking> call, Throwable t) {

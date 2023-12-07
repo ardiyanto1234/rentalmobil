@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.kelompokc4.myapplication.Adapter.AdapterHistori;
 import com.kelompokc4.myapplication.koneksi.ModelNotifikasi;
@@ -50,12 +51,16 @@ public class  notif extends Fragment {
         call.enqueue(new Callback<ResponHistori>() {
             @Override
             public void onResponse(Call<ResponHistori> call, Response<ResponHistori> response) {
+                Toast.makeText(getActivity(), "id = "+id, Toast.LENGTH_SHORT).show();
                 if(response.isSuccessful()){
                     ArrayList<ModelNotifikasi> list = response.body().getData();
                     data.addAll(list);
                     AdapterHistori adapterHistori = new AdapterHistori(data);
                     recyclerView.setAdapter(adapterHistori);
+                    Toast.makeText(getActivity(), "test"+response.body().getData(), Toast.LENGTH_SHORT).show();
 
+                }else {
+                    Toast.makeText(getActivity(), "gagalll", Toast.LENGTH_SHORT).show();
                 }
             }
 

@@ -38,9 +38,9 @@ public class Profil extends Fragment {
         String alamat = sharedPreferences.getString("almat", "");
 
         // Set data pengguna ke TextView
-        usernameTextView.setText(username);
-        emailTextView.setText(email);
-        alamatTextView.setText(alamat);
+        usernameTextView.setText("Username : " + username);
+        emailTextView.setText("Email       : " + email);
+        alamatTextView.setText("Alamat     : " + alamat);
 
         return view;
     }
@@ -79,5 +79,19 @@ public class Profil extends Fragment {
         Intent intent = new Intent(requireActivity(), MainActivity.class);
         startActivity(intent);
         requireActivity().finish();  // Menutup activity saat ini setelah logout
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("prefLogin", Context.MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", "");
+        String email = sharedPreferences.getString("email", "");
+        String alamat = sharedPreferences.getString("almat", "");
+
+        // Set data pengguna ke TextView
+        usernameTextView.setText("Username : " + username);
+        emailTextView.setText("Email : "+email);
+        alamatTextView.setText("Alamat : " + alamat);
     }
 }

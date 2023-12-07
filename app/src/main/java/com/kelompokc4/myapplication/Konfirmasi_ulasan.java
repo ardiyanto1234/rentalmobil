@@ -9,25 +9,27 @@ import android.view.View;
 import android.widget.Button;
 
 public class Konfirmasi_ulasan extends AppCompatActivity {
-    
-    Button btnSelesai;
 
-    @SuppressLint("MissingInflatedId")
+    private Button btnSelesai;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_konfirmasi_ulasan);
-        
-        btnSelesai = findViewById(R.id.btnSelesai);
-        btnSelesai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Selesai();
-            }
-            private void Selesai() {
-                Intent intent = new Intent(Konfirmasi_ulasan.this, home.class);
-                startActivity(intent);
-            }
-        });
+
+        btnSelesai = findViewById(R.id.buttonSelesai);
+
+            btnSelesai.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Selesai();
+                }
+            });
+
+    }
+
+    private void Selesai() {
+        Intent intent = new Intent(Konfirmasi_ulasan.this, home.class);
+        startActivity(intent);
     }
 }

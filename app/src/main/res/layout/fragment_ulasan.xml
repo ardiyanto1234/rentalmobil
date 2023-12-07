@@ -17,6 +17,7 @@
     <EditText
         android:id="@+id/editTextUlasan"
         android:layout_width="match_parent"
+        android:paddingRight="@dimen/_10sdp"
         android:layout_height="100dp"
         android:layout_marginTop="100dp"
         android:layout_marginStart="30dp"
@@ -25,13 +26,13 @@
         android:gravity="top|left"/>
 
     <Button
-        android:id="@+id/buttonSubmit"
-        android:layout_width="match_parent"
+        android:id="@+id/buttonsubmit"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
         android:backgroundTint="@color/black"
         android:text="Kirim"
+        android:layout_marginLeft="@dimen/_80sdp"
         android:textColor="@color/kuning2"
-        android:layout_marginTop="300dp"
-        android:layout_gravity="center_horizontal"/>
-
+        />
 </FrameLayout>

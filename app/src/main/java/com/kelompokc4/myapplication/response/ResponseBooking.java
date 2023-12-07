@@ -4,9 +4,10 @@ import java.util.List;
 
 public class ResponseBooking {
 
-    String message,status;
+    private String message;
+    private String status;
 
-    List<ModelBooking> data;
+    private List<ModelBooking> data;
 
     public String getMessage() {
         return message;

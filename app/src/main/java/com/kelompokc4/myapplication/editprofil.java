@@ -74,10 +74,22 @@ public class editprofil extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<UserResponse> call, Throwable t) {
                         Log.e("error pada update profil", t.getMessage());
+                        t.printStackTrace();
                     }
                 });
 
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedPreferences =getSharedPreferences("prefLogin", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        String id_user = sharedPreferences.getString("id_user", "");
+        String username = sharedPreferences.getString("username", "");
+        String email = sharedPreferences.getString("email", "");
+        String alamat = sharedPreferences.getString("almat", "");
     }
 }

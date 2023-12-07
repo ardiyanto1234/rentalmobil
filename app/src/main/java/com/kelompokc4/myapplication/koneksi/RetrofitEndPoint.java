@@ -45,7 +45,7 @@ public interface RetrofitEndPoint {
 
 
     @FormUrlEncoded
-    @POST("login.php")
+    @POST("Login.php")
     Call<UserResponse> loginEasyDrive(
             @Field("username") String username,
             @Field("password") String password
@@ -153,7 +153,7 @@ public interface RetrofitEndPoint {
             @Field("alamat") String alamat
     );
 @FormUrlEncoded
-    @POST("histori.php")
+    @POST("History.php")
     Call<ResponHistori> histori(
             @Field("id_user") String iduser
     );

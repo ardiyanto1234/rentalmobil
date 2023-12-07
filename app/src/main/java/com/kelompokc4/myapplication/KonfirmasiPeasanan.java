@@ -32,7 +32,6 @@ public class KonfirmasiPeasanan extends AppCompatActivity {
 
         btnback = findViewById(R.id.btnKembaliPesan);
         btnselesai = findViewById(R.id.btnSelesai);
-
         btnselesai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

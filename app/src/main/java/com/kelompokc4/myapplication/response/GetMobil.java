@@ -12,7 +12,7 @@ public class GetMobil {
     private String jumlah_kursi;
     @Expose
     @SerializedName("bahan_bakar")
-    private String  Bahan_bakar;
+    private String Bahan_bakar;
     private String isi_silinder;
     private String plat;
     private String type;
@@ -26,10 +26,15 @@ public class GetMobil {
     public void setJumlah_kursi(String jumlah_kursi) {
         this.jumlah_kursi = jumlah_kursi;
     }
-    public String getgambar_mobil() { return gambar_mobil;}
+
+    public String getgambar_mobil() {
+        return gambar_mobil;
+    }
+
     public void setgambar_mobil(String gambar_mobil) {
         this.gambar_mobil = gambar_mobil;
     }
+
     public String getBahan_bakar() {
         return Bahan_bakar;
     }
