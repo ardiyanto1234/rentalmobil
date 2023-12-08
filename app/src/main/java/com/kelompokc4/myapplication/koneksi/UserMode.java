@@ -11,8 +11,8 @@ public class UserMode {
     @SerializedName("username")
     private String username;
     @Expose
-    @SerializedName("almat")
-    private String almat;
+    @SerializedName("alamat")
+    private String alamat;
     @Expose
     @SerializedName("email")
     private String email;
@@ -39,11 +39,11 @@ public class UserMode {
     }
 
     public String getAlmat() {
-        return almat;
+        return alamat;
     }
 
     public void setAlmat(String almat) {
-        this.almat = almat;
+        this.alamat = alamat;
     }
 
     public String getEmail() {

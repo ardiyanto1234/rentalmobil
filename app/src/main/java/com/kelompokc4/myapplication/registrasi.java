@@ -102,7 +102,6 @@ public class registrasi extends AppCompatActivity {
                                             Toast.makeText(registrasi.this, "OTP gagal dikirim", Toast.LENGTH_SHORT).show();
                                         }
                                     }
-
                                     @Override
                                     public void onFailure(Call<VerifyResponse> call, Throwable t) {
                                         t.printStackTrace();

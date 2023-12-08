@@ -40,7 +40,7 @@ public class editprofil extends AppCompatActivity {
         String id_user = sharedPreferences.getString("id_user", "");
         String username = sharedPreferences.getString("username", "");
         String email = sharedPreferences.getString("email", "");
-        String alamat = sharedPreferences.getString("almat", "");
+        String alamat = sharedPreferences.getString("alamat", "");
 
         editTextUsername.setText(username);
         editTextEmail.setText(email);
@@ -62,7 +62,7 @@ public class editprofil extends AppCompatActivity {
                         if (response.body().getStatus().equals("success")){
                             Toast.makeText(editprofil.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                             editor.putString("username", editTextUsername.getText().toString());
-                            editor.putString("almat", editTextAlamat.getText().toString());
+                            editor.putString("alamat", editTextAlamat.getText().toString());
                             editor.putString("email", editTextEmail.getText().toString());
                             editor.apply();
                             finish();
@@ -90,6 +90,6 @@ public class editprofil extends AppCompatActivity {
         String id_user = sharedPreferences.getString("id_user", "");
         String username = sharedPreferences.getString("username", "");
         String email = sharedPreferences.getString("email", "");
-        String alamat = sharedPreferences.getString("almat", "");
+        String alamat = sharedPreferences.getString("alamat", "");
     }
 }

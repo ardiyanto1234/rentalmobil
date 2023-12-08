@@ -53,10 +53,8 @@ public class    kodeotp extends AppCompatActivity {
 
             @Override
             public void onOTPComplete(@NonNull String s) {
-
                 if (dataOtp.equals(otpTextView.getOtp())) {
                     Toast.makeText(kodeotp.this, "OTP Valid", Toast.LENGTH_SHORT).show();
-
                     RetrofitClient.getConnection().create(RetrofitEndPoint.class).driveeasy(getIntent().getStringExtra(USERNAME), getIntent().getStringExtra(EMAIL), getIntent().getStringExtra(ALAMAT), getIntent().getStringExtra(PASS))
                             .enqueue(new Callback<UserResponse>() {
                                 @Override
@@ -66,17 +64,15 @@ public class    kodeotp extends AppCompatActivity {
                                         startActivity(new Intent(kodeotp.this, MainActivity.class));
                                     }
                                 }
-
                                 @Override
                                 public void onFailure(Call<UserResponse> call, Throwable t) {
-
+t.printStackTrace();
                                 }
                             });    
                 }
 
             }
         });
-
 
         btnSelesai.setOnClickListener(new View.OnClickListener() {
             @Override

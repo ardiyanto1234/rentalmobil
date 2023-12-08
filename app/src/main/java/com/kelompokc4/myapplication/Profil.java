@@ -35,7 +35,7 @@ public class Profil extends Fragment {
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("prefLogin", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "");
         String email = sharedPreferences.getString("email", "");
-        String alamat = sharedPreferences.getString("almat", "");
+        String alamat = sharedPreferences.getString("alamat", "");
 
         // Set data pengguna ke TextView
         usernameTextView.setText("Username : " + username);
