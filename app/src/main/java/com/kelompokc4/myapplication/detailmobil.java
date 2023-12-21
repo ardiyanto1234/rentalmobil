@@ -42,7 +42,7 @@ public class detailmobil extends AppCompatActivity {
 
         if (imgurl != null) {
             Glide.with(getApplicationContext())
-                    .load(RetrofitClient.BASE_URL  + imgurl)
+                    .load("https://driveeasy.tifnganjuk.com/"  + imgurl)
                     .into(gambar_mobil);
             Toast.makeText(this, "img : " + imgurl, Toast.LENGTH_SHORT).show();
         } else {

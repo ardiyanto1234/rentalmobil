@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,6 +37,7 @@ public class Profil extends Fragment {
         String username = sharedPreferences.getString("username", "");
         String email = sharedPreferences.getString("email", "");
         String alamat = sharedPreferences.getString("alamat", "");
+        Toast.makeText(getActivity(), "alamat" + alamat, Toast.LENGTH_SHORT).show();
 
         // Set data pengguna ke TextView
         usernameTextView.setText("Username : " + username);
@@ -86,8 +88,8 @@ public class Profil extends Fragment {
         super.onResume();
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("prefLogin", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "");
-        String email = sharedPreferences.getString("email", "");
-        String alamat = sharedPreferences.getString("almat", "");
+        String email    = sharedPreferences.getString("email", "");
+        String alamat   = sharedPreferences.getString("alamat", "");
 
         // Set data pengguna ke TextView
         usernameTextView.setText("Username : " + username);

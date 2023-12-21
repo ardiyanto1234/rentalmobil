@@ -266,7 +266,7 @@ public class pesanan extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<ResponseBooking> call, Response<ResponseBooking> response) {
-                if (response.isSuccessful() && respon != null) {
+//                if (response.isSuccessful() && respon != null) {
                     if ("success".equals(response.body().getStatus())) {
                         // Respons sukses, memulai timer
                         startTimer(idMobil, getDurationInMillis(JamPesan));
@@ -277,10 +277,10 @@ public class pesanan extends AppCompatActivity {
                         // Handle other response statuses if needed
                         Toast.makeText(pesanan.this, "Response status: " + response.body().getStatus(), Toast.LENGTH_SHORT).show();
                     }
-                } else {
-                    // Handle unsuccessful response
-                    Toast.makeText(pesanan.this, "Response not successful or body is null", Toast.LENGTH_SHORT).show();
-                }
+//                } else {
+//                    // Handle unsuccessful response
+//                    Toast.makeText(pesanan.this, "Response not successful or body is null", Toast.LENGTH_SHORT).show();
+//                }
             }
 
 

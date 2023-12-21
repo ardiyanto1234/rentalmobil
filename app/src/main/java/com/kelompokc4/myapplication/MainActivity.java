@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 RetrofitClient.getInstance().loginEasyDrive(username, password).enqueue(new Callback<UserResponse>() {
                     @Override
                     public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                        if (response.body() != null && response.body().getStatus().equalsIgnoreCase("success")) {
+                        if ("success".equals(response.body().getStatus())) {
 
                             SharedPreferences sharedPreferences = getSharedPreferences("prefLogin", MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, "id = " + String.valueOf(user.getId_user()), Toast.LENGTH_SHORT).show();
                             editor.putString("id_user", String.valueOf(user.getId_user()));
                             editor.putString("username", user.getUsername());
-                            editor.putString("almat", user.getAlmat());
+                            editor.putString("alamat", user.getAlamat());
                             editor.putString("email", user.getEmail());
                             editor.putString("password", user.getPassword());
                             editor.apply();
@@ -150,19 +150,21 @@ public class MainActivity extends AppCompatActivity {
                     .enqueue(new Callback<UserResponse>() {
                         @Override
                         public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                            if (response.body() != null && response.body().getStatus().equalsIgnoreCase(RetrofitClient.SUCCESSFUL_RESPONSE)) {
+//                            if (response.body() != null && response.body().getStatus().equalsIgnoreCase(RetrofitClient.SUCCESSFUL_RESPONSE)) {
+                            if ("success".equals(response.body().getStatus())) {
                                 SharedPreferences sharedPreferences = getSharedPreferences("prefLogin", MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                                 // Simpan semua data pengguna ke SharedPreferences
                                 UserMode user = response.body().getData();
-                                Toast.makeText(MainActivity.this, "id = " + String.valueOf(user.getId_user()), Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(MainActivity.this, "alamat"+ String.valueOf(user.getAlamat()), Toast.LENGTH_SHORT).show();
                                 editor.putString("id_user", String.valueOf(user.getId_user()));
                                 editor.putString("username", user.getUsername());
-                                editor.putString("almat", user.getAlmat());
+                                editor.putString("alamat", user.getAlamat());
                                 editor.putString("email", user.getEmail());
                                 editor.putString("password", user.getPassword());
                                 editor.apply();
+
                                 // open main activity
                                 startActivity(new Intent(MainActivity.this, Dasboard.class));
                             } else {

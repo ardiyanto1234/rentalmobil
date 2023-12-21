@@ -20,7 +20,9 @@ public class UserMode {
     @SerializedName("password")
     private String password;
 
-
+    public String getAlamat() {
+        return alamat;
+    }
 
     public int getId_user() {
         return id_user;
@@ -36,14 +38,6 @@ public class UserMode {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getAlmat() {
-        return alamat;
-    }
-
-    public void setAlmat(String almat) {
-        this.alamat = alamat;
     }
 
     public String getEmail() {

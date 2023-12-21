@@ -29,7 +29,7 @@ public class adapter_daftar_mobil extends RecyclerView.Adapter<adapter_daftar_mo
     public String getImageUrl() {
         // Tambahkan skema http/https jika belum ada
             RetrofitClient retrofitClient = new RetrofitClient();
-            return retrofitClient.BASE_URL + imageUrl;
+            return "https://driveeasy.tifnganjuk.com/" + imageUrl;
 
     }
     public void setImageUrl(String imageUrl) {
@@ -64,7 +64,8 @@ public class adapter_daftar_mobil extends RecyclerView.Adapter<adapter_daftar_mo
                 .load(getImageUrl())  // Ganti dengan metode getter yang benar dari GetMobil
                 .into(holder.gambarmobil);
         Toast.makeText(context, getImageUrl(), Toast.LENGTH_SHORT).show();
-
+        RetrofitClient retrofitClient = new RetrofitClient();
+        Log.e("Lokasi", "Lokasi : "+"https://driveeasy.tifnganjuk.com/" + imageUrl);
         Log.e("TES", "" + list.getId_mobil());
         //menampilkan data recyclerview
         holder.tv_merk.setText(list.getType());
