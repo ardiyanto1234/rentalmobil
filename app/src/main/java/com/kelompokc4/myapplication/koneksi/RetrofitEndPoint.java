@@ -2,7 +2,6 @@ package com.kelompokc4.myapplication.koneksi;
 
 import com.kelompokc4.myapplication.response.Detailresponmobil;
 import com.kelompokc4.myapplication.response.EmailCheckResponse;
-import com.kelompokc4.myapplication.response.GetMobil;
 import com.kelompokc4.myapplication.response.GetMobileResponse;
 import com.kelompokc4.myapplication.response.ResponseBooking;
 import com.kelompokc4.myapplication.response.ResponseTiimer;
